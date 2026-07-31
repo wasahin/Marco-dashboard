@@ -1,0 +1,93 @@
+{
+  "lastUpdated": "2026-07-30",
+  "metrics": {
+    "bofa": {
+      "value": 9.6,
+      "label": "BofA Bull & Bear",
+      "unit": "/10",
+      "description": "Sell signal active since May; AI bubble cited as top risk by 45% of FMS respondents; Hartnett warns on tech fund flows",
+      "status": "bearish"
+    },
+    "fearGreed": {
+      "value": 38.5,
+      "label": "CNN Fear & Greed",
+      "unit": "/100",
+      "description": "Fear zone at 38.5 (Jul 28, CNN Markets); down from 43.4 one week ago; previous month was 24.7",
+      "status": "neutral"
+    },
+    "vix": {
+      "value": 16.16,
+      "label": "VIX Index",
+      "unit": "",
+      "description": "VIX dropped to 16.16 (Investing.com, Jul 31); volatility compressed after Jul 30 dip-buying rally; down from 19.65",
+      "status": "neutral"
+    },
+    "aaii": {
+      "value": -12.7,
+      "label": "AAII Bull-Bear Spread",
+      "unit": "%",
+      "description": "Bears outnumber bulls as July selloff deepens; sentiment deteriorated from -10.9% earlier in month",
+      "status": "neutral"
+    },
+    "cta": {
+      "value": 75,
+      "label": "CTA Exposure Percentile",
+      "unit": "th",
+      "description": "GS: CTA deleveraging risk remains high; US tech experiencing decade-largest net selling; quant strategies face July drawdowns",
+      "status": "bearish"
+    },
+    "cash": {
+      "value": 3.6,
+      "label": "Fund Manager Cash",
+      "unit": "%",
+      "description": "BofA July FMS: 3.6%; below 4% sell threshold; near 13-year low; AI bubble now #1 tail risk",
+      "status": "bearish"
+    },
+    "levEtfAum": {
+      "value": 110,
+      "label": "Leveraged ETF AUM",
+      "unit": "$B",
+      "description": "Leveraged ETF AUM declined further as deleveraging in tech accelerates",
+      "status": "neutral"
+    },
+    "sox": {
+      "value": 20,
+      "label": "SOX Drawdown",
+      "unit": "%",
+      "description": "SOX surged +7% on Jul 30 dip-buying (WallStreetCN); drawdown narrowed from ~25% to ~20% from June highs; still in technical bear market",
+      "status": "bearish"
+    },
+    "ndx": {
+      "value": -5,
+      "label": "NDX Performance",
+      "unit": "%",
+      "description": "NDX improved with Jul 30 rally (MSFT +14%); narrowed YTD loss from -7% to ~-5%; MAG7 still weigh on index",
+      "status": "neutral"
+    },
+    "russell2000": {
+      "value": 9,
+      "label": "Russell 2000 YTD",
+      "unit": "%",
+      "description": "RUT at 2,948 (Investing.com, Jul 31); small caps holding up better than large-cap tech; YTD ~9%",
+      "status": "neutral"
+    }
+  },
+  "structural": {
+    "dealerGamma": "short",
+    "volTarget": "high",
+    "breadth": "weak"
+  },
+  "regime": {
+    "level": "high-risk",
+    "title": "Defensive Zone",
+    "advice": "DEFENSIVE: REDUCE AGGRESSIVENESS",
+    "details": [
+      "BofA at 9.6 (sell signal since May) | Fear & Greed at 38.5 (fear, CNN) | CTA at 75th percentile",
+      "VIX dropped to 16.16 (Investing.com); volatility compressed after Jul 30 dip-buying rally",
+      "Fund cash at 3.6% — below BofA's 4% sell threshold (near 13-year low)",
+      "SOX bounced +7% Jul 30 (WallStreetCN); drawdown narrowed to ~20% but still in technical bear market",
+      "GS: US tech seeing decade-largest net selling; CTA deleveraging risk persists despite rally",
+      "AI bubble now #1 tail risk (BofA FMS); 45% of fund managers flag it"
+    ]
+  }
+}

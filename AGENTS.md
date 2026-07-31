@@ -48,6 +48,15 @@ These sources need AI in the loop to search, read, and interpret. They cannot be
 - **Sector rotation heatmap** — needs sector ETF prices + relative strength calc; can derive from Yahoo data already in stack.
 - **ForexFactory RSS** — for economic calendar (FOMC, CPI dates). Much easier to scrape than Investing.com. **Status: to be added as `data/calendar.json`, maintained monthly.**
 
+### 2.5 Deferred — Phase 2
+
+The following items are explicitly deferred to a future session. Do NOT implement these in Phase 1.
+
+- **MacroMicro endpoint discovery** — needs manual inspection of page source to find the JSON endpoint per chart URL. Deferred: requires separate manual endpoint discovery session.
+- **`_stale: true` flag on individual data files** — will be bundled with MacroMicro integration in the next session. Phase 1 uses `health.json` for source status tracking instead.
+- **ForexFactory calendar** — RSS parsing for economic calendar (FOMC, CPI dates). Deferred: lower priority than core data pipeline stability.
+- **Per-source file split** (`vix.json`, `fear-greed.json`, `prices.json`, `macro.json`) — only do if debugging becomes painful. Current single `market-data.json` + `health.json` is sufficient.
+
 ---
 
 ## 3. Architecture
@@ -56,16 +65,13 @@ These sources need AI in the loop to search, read, and interpret. They cannot be
 Marco-dashboard/
 ├── index.html              # Single-file static dashboard (Macro + Premium themes)
 ├── scripts/
-│   └── update-data.js      # Node script, hits 4 free APIs
+│   └── update-data.js      # Node script, hits 3 free APIs (CBOE, CNN, Yahoo)
 ├── data/
-│   ├── market-data.json    # Current: single combined JSON (to be split)
-│   ├── vix.json            # Future: per-source snapshots
-│   ├── fear-greed.json
-│   ├── prices.json
-│   └── macro.json
+│   ├── market-data.json    # Combined market data snapshot
+│   └── health.json         # Source health tracking (written every run)
 ├── .github/
 │   └── workflows/
-│       └── update-data.yml # Cron schedule, runs update-data.js
+│       └── update-data.yml # Cron schedule (UTC 21:00 weekdays), runs update-data.js
 ├── AGENTS.md               # This file
 ├── README.md
 ├── wrangler.toml           # Cloudflare Workers static asset config
@@ -82,9 +88,10 @@ Marco-dashboard/
 │  CBOE API → VIX                          │
 │  CNN dataviz API → Fear & Greed          │
 │  Yahoo Finance API → SOX/NDX/RUT         │
-│  MacroMicro → BofA Bull/Bear             │
+│  (Yahoo calls use exponential backoff)   │
 │                                          │
 │  → Updates data/market-data.json         │
+│  → Writes data/health.json (every run)   │
 │  → Commits & pushes to GitHub            │
 │  → Cloudflare auto-deploys               │
 └─────────────────────────────────────────┘
@@ -208,11 +215,11 @@ Override rule: If BofA >= 8 AND cash < 4 AND SOX >= 10, force RED regardless of 
 
 ## 8. Known constraints
 
-1. **Yahoo rate-limits anonymous calls** (~100/hr/IP). Script must implement exponential backoff + jitter. Consider 3+ second delay between requests.
+1. **Yahoo rate-limits anonymous calls** (~100/hr/IP). Script implements exponential backoff + jitter (3s → 6s → 12s, ±20% jitter, max 3 retries). A 3s delay is enforced between Yahoo calls. `rateLimitHits` counter tracks HTTP 429 responses in `health.json`.
 2. **CBOE sometimes blocks** — script falls back to last-known value with `_stale: true` flag.
 3. **No paid API budget** — every new source must be free. Document rationale before adding.
 4. **Data is point-in-time** — for VCP entry decisions, the dashboard is context, not signal. Always cross-check with the actual chart before entry.
-5. **HTTP 4xx/5xx handling** — script must NOT crash on single-source failure. Skip + log, continue with other sources.
+5. **HTTP 4xx/5xx handling** — script must NOT crash on single-source failure. Skip + log, continue with other sources. Source status (success/error/lastValue) is written to `data/health.json` every run.
 
 ---
 

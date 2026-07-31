@@ -347,6 +347,65 @@
             .regime-card { padding: 25px; }
             .regime-indicator { flex-direction: column; gap: 15px; }
         }
+
+        /* HEALTH BADGE */
+        .health-badge {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: .75rem;
+            font-family: var(--font-body);
+            cursor: help;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: opacity .3s ease;
+        }
+        body[data-theme="macro"] .health-badge {
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.12);
+            color: var(--text-muted);
+        }
+        body[data-theme="premium"] .health-badge {
+            background: rgba(45,49,56,.04);
+            border: 1px solid rgba(45,49,56,.08);
+            color: var(--text-muted);
+        }
+        .health-badge .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            display: inline-block;
+        }
+        .health-badge.healthy .dot { background: #22c55e; }
+        .health-badge.stale .dot { background: #eab308; }
+        .health-badge.failed .dot { background: #ef4444; }
+        .health-badge .tooltip {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            right: 0;
+            margin-bottom: 8px;
+            padding: 10px 14px;
+            border-radius: 8px;
+            white-space: nowrap;
+            font-size: .7rem;
+            line-height: 1.8;
+        }
+        body[data-theme="macro"] .health-badge .tooltip {
+            background: rgba(0,0,0,.85);
+            color: #e0e0e0;
+            border: 1px solid rgba(255,255,255,.1);
+        }
+        body[data-theme="premium"] .health-badge .tooltip {
+            background: white;
+            color: #2D3138;
+            border: 1px solid rgba(45,49,56,.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,.08);
+        }
+        .health-badge:hover .tooltip { display: block; }
     </style>
 </head>
 <body data-theme="macro">
@@ -590,6 +649,13 @@
         <footer>
             <p class="footer-text">Data updated via TRAE → GitHub → Cloudflare Pages. For internal use only.</p>
         </footer>
+    </div>
+
+    <!-- HEALTH BADGE -->
+    <div class="health-badge failed" id="healthBadge">
+        <span class="dot"></span>
+        <span class="status-text">Checking...</span>
+        <div class="tooltip" id="healthTooltip">Loading health data...</div>
     </div>
 
     <script>
@@ -864,6 +930,62 @@
             }
         }
 
+        // ===== HEALTH BADGE =====
+        async function updateHealthBadge() {
+            const badge = document.getElementById('healthBadge');
+            const tooltip = document.getElementById('healthTooltip');
+            if (!badge || !tooltip) return;
+
+            try {
+                const response = await fetch('data/health.json?t=' + Date.now());
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                const health = await response.json();
+
+                const sources = Object.values(health.sources);
+                const allSuccess = sources.every(s => s.success);
+                const anySuccess = sources.some(s => s.success);
+                const anyStaleData = sources.some(s => s.lastValue !== null);
+                const lastRun = new Date(health.lastRun);
+                const isStale = (Date.now() - lastRun.getTime()) > 24 * 60 * 60 * 1000;
+
+                let state, text;
+                if (!anySuccess && !anyStaleData) {
+                    state = 'failed';
+                    text = 'All sources failed';
+                } else if (allSuccess && !isStale) {
+                    state = 'healthy';
+                    text = 'All sources healthy';
+                } else {
+                    state = 'stale';
+                    text = isStale ? 'Data is stale (>24h)' : 'Some sources degraded';
+                }
+
+                badge.className = 'health-badge ' + state;
+                badge.querySelector('.status-text').textContent = text;
+
+                // Build tooltip
+                const runTime = lastRun.toLocaleString('en-US', {
+                    year: 'numeric', month: 'short', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit', timeZone: 'UTC'
+                }) + ' UTC';
+                let html = '<strong>Last run:</strong> ' + runTime + '<br>';
+                html += '<strong>Duration:</strong> ' + health.durationMs + 'ms<br><br>';
+                Object.entries(health.sources).forEach(function(entry) {
+                    var name = entry[0], src = entry[1];
+                    var icon = src.success ? '\u2705' : '\u274C';
+                    var val = src.lastValue !== null ? src.lastValue : 'N/A';
+                    var err = src.error ? ' (' + src.error + ')' : '';
+                    var rl = src.rateLimitHits !== undefined ? ' [RL hits: ' + src.rateLimitHits + ']' : '';
+                    html += '<strong>' + name + ':</strong> ' + icon + ' ' + val + err + rl + '<br>';
+                });
+                tooltip.innerHTML = html;
+            } catch (err) {
+                badge.className = 'health-badge failed';
+                badge.querySelector('.status-text').textContent = 'Health data unavailable';
+                tooltip.innerHTML = 'Failed to load data/health.json';
+            }
+        }
+
         // ===== INIT =====
         document.addEventListener('DOMContentLoaded', function() {
             // Restore theme preference
@@ -871,12 +993,16 @@
             setTheme(savedTheme);
             updateTimestamp();
             loadData();
+            updateHealthBadge();
 
             // Auto-calc on input change
             document.querySelectorAll('input, select').forEach(input => {
                 input.addEventListener('change', calculateRegime);
                 input.addEventListener('input', calculateRegime);
             });
+
+            // Refresh health badge every 5 minutes
+            setInterval(updateHealthBadge, 5 * 60 * 1000);
         });
     </script>
 </body>

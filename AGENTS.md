@@ -4,7 +4,6 @@
 > Owner: 道高 (wasahin) — VCP/momentum trader, primarily US stocks
 > Toolchain: TRAE (vibe coding) → GitHub → Cloudflare Pages
 > License: MIT
-> Last updated: 2026-07-31
 
 ---
 
@@ -214,3 +213,41 @@ Override rule: If BofA >= 8 AND cash < 4 AND SOX >= 10, force RED regardless of 
 3. **No paid API budget** — every new source must be free. Document rationale before adding.
 4. **Data is point-in-time** — for VCP entry decisions, the dashboard is context, not signal. Always cross-check with the actual chart before entry.
 5. **HTTP 4xx/5xx handling** — script must NOT crash on single-source failure. Skip + log, continue with other sources.
+
+---
+
+## 9. VCP trading context (for future contributors / AIs)
+
+VCP = Volatility Contraction Pattern (Mark Minervini). Core requirements:
+- US-listed stock with consistent revenue + earnings growth
+- Tight price consolidation after a base (lower highs in volatility)
+- Volume contracts during the base
+- Breakout on volume expansion above the base high
+
+### How this dashboard supports VCP
+
+- **VIX** — if VIX > 25, market regime is hostile to breakouts. Reduce position sizing or sit out.
+- **Fear & Greed** — extreme fear (0-25) = potential reversal zone, but also can stay extreme. Extreme greed (75-100) = late-stage rally, tighten stops.
+- **MacroMicro bull/bear ratio** — confirms or contradicts sector-level momentum.
+- **Stock prices** — for the watchlist only, not the dashboard's main job.
+
+### What this dashboard is NOT for
+
+Stock screening. Use Finviz / TradingView / Yahoo screener for that. The dashboard shows market context, not individual stock signals.
+
+---
+
+## 10. Working agreement for future changes
+
+- **Adding a new data source?** Section 2 must be updated with: endpoint, what it gives, why free, scraping difficulty rating.
+- **Removing a source?** Move to Section 2.2 with reason, never just delete — preserve decision record.
+- **Changing schedule?** Update Section 4 + the workflow file. Document rationale in commit message.
+- **Changing the dashboard UI?** No special process — just commit. But: keep it static HTML, no React build step unless explicitly decided.
+
+---
+
+## 11. Tooling notes
+
+- This repo is maintained via **TRAE** (AI-native IDE, ByteDance). Vibe coding workflow: describe → review diff → iterate → commit.
+- **No paid APIs ever.** No headless browser. No proxy layer. If a feature needs any of these, escalate before adding.
+- **Cloudflare Workers** is the deploy target. `wrangler.toml` configures static asset serving. Deploy command: `npx wrangler deploy`.

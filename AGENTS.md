@@ -1,120 +1,173 @@
-# 📊 Macro Dashboard Agent Instructions
+# Marco-dashboard
 
-## Project Overview
+> **Daily Risk Assessment for VCP / Momentum Trading**
+> Owner: 道高 (wasahin) — VCP/momentum trader, primarily US stocks
+> Toolchain: TRAE (vibe coding) → GitHub → Cloudflare Pages
+> License: MIT
+> Last updated: 2026-07-31
 
-Daily Risk Assessment Dashboard for VCP / Momentum Trading. Combines Macro (dark/colorful/emoji) and Premium (light/serif) views in a single `index.html` with a theme toggle.
+---
 
-## Data Sources (Important)
+## 1. What this dashboard is
 
-**No paid APIs.** All data is collected via web search and scraping free public sources.
+A **static, single-page HTML dashboard** showing daily US market risk context for VCP (Volatility Contraction Pattern) entries. Decision support only — not a live trading system, not a backtester, not a screener.
 
-### Priority Sources (check these first)
+---
 
-| Source | URL | What to get |
-|--------|-----|-------------|
-| CNN Fear & Greed | https://edition.cnn.com/markets/fear-and-greed | Fear & Greed Index value |
-| WallStreetCN | https://wallstreetcn.com/ | SOX, NDX, market moves |
-| Investing.com | https://cn.investing.com/ | VIX, Russell 2000, index prices |
-| MacroMicro | https://en.macromicro.me/charts/142681/us-mm-bull-and-bear-indicator | BofA Bull & Bear Indicator |
+## 2. Data sources (all free, no paid API)
 
-### Secondary Sources
+### 2.1 Automated layer — runs on cron, zero human/AI in the loop
 
-- BofA Global Research, ZeroHedge, Bloomberg (BofA, CTA, Cash metrics)
-- AAII official website (AAII Bull-Bear Spread)
-- Goldman Sachs, JPMorgan (CTA exposure)
+| Source | Endpoint | What it gives | Update frequency |
+|---|---|---|---|
+| **CBOE** | `https://api.cboe.com/...` (VIX) | Volatility index | Hourly during market hours |
+| **CNN dataviz** | `https://production.dataviz.cnn.io/index/fearandgreed/graphdata` | Fear & Greed composite (7 indicators) | Hourly |
+| **Yahoo Finance** | `https://query1.finance.yahoo.com/v8/finance/chart/{TICKER}` | US stock / ETF prices | Every 5 min during market hours |
+| **MacroMicro** | JSON endpoint per chart URL (e.g. `/charts/142681`) | Macro indicators, bull/bear ratio | Daily |
 
-## Deployment Architecture
+All four are **clean JSON endpoints** — no HTML scraping, no auth required (except where noted). This is the core data plane.
 
-- **GitHub repo:** `wasahin/Marco-dashboard`
-- **Hosting:** Cloudflare Workers (static asset serving via `wrangler.toml`)
-- **Live URL:** `marco-dashboard.<subdomain>.workers.dev`
+### 2.2 Manual layer — AI refresh, on-demand only
 
-### Update Workflow
+| Source | What it gives | When |
+|---|---|---|
+| **WallStreetCN** | Chinese US-market news, SOX/NDX context | When user says "update all indices" |
+| **Web search** | CTA exposure, Fund Manager Cash, AAII sentiment | Same — requires AI interpretation |
 
-When the update button is pressed:
-1. Trae processes data locally (web search + scrape priority sources)
-2. Update `data/market-data.json` with new values
-3. Commit and push to GitHub
-4. Cloudflare auto-deploys the updated dashboard
+These sources need AI in the loop to search, read, and interpret. They cannot be cron-automated without a headless browser. They enrich the JSON with context descriptions, not raw values.
 
-## How to Update Market Data
+### 2.3 Removed sources (decision record)
 
-### Method 1: Ask Trae (Recommended)
-Say "update all indices" or "update the dashboard" — Trae will:
-1. Search priority sources for each metric
-2. Update `data/market-data.json` with latest values
-3. Commit and push to GitHub
-4. Cloudflare auto-deploys
+- **华尔街见闻 (WallStreetCN)** — wanted for Chinese US-market news. **Removed from automated layer** because HTML encrypted, IP rate-limiting aggressive, requires headless browser + anti-detection. Kept as manual AI-only layer. Cost not worth automating.
+- **Investing.com (cn.investing.com)** — same reason: aggressive anti-scraping. Economic calendar moved to ForexFactory (English, has RSS). **Fully removed.**
 
-### Method 2: Run the Script
+### 2.4 Future / not yet integrated
+
+- **Finviz** — free tier is HTML-only, no JSON API. Elite tier has real API but is paid (~$25/mo) — **out of scope per no-paid-API rule**. Alternative: Yahoo Finance undocumented screener endpoints or StockAnalysis.com cleaner structure. **Status: future work**.
+- **Sina Finance / Eastmoney** — if Chinese US-market news is needed later, these have cleaner JSON endpoints than WallStreetCN.
+- **S&P 500 breadth** (% above 50/200 MA) — need a free source. Yahoo or Finviz scrape are options.
+- **Sector rotation heatmap** — needs sector ETF prices + relative strength calc; can derive from Yahoo data already in stack.
+- **ForexFactory RSS** — for economic calendar (FOMC, CPI dates). Much easier to scrape than Investing.com. **Status: to be added as `data/calendar.json`, maintained monthly.**
+
+---
+
+## 3. Architecture
+
+```
+Marco-dashboard/
+├── index.html              # Single-file static dashboard (Macro + Premium themes)
+├── scripts/
+│   └── update-data.js      # Node script, hits 4 free APIs
+├── data/
+│   ├── market-data.json    # Current: single combined JSON (to be split)
+│   ├── vix.json            # Future: per-source snapshots
+│   ├── fear-greed.json
+│   ├── prices.json
+│   └── macro.json
+├── .github/
+│   └── workflows/
+│       └── update-data.yml # Cron schedule, runs update-data.js
+├── AGENTS.md               # This file
+├── README.md
+├── wrangler.toml           # Cloudflare Workers static asset config
+└── LICENSE                 # MIT
+```
+
+### Data flow
+
+```
+┌─────────────────────────────────────────┐
+│  AUTOMATED (GitHub Actions cron)         │
+│  Daily at UTC 21:00 (US market close)   │
+│                                          │
+│  CBOE API → VIX                          │
+│  CNN dataviz API → Fear & Greed          │
+│  Yahoo Finance API → SOX/NDX/RUT         │
+│  MacroMicro → BofA Bull/Bear             │
+│                                          │
+│  → Updates data/market-data.json         │
+│  → Commits & pushes to GitHub            │
+│  → Cloudflare auto-deploys               │
+└─────────────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│  MANUAL (AI refresh, on-demand)          │
+│  When user says "update all indices"     │
+│                                          │
+│  WallStreetCN → SOX/NDX context          │
+│  Web search → CTA, Cash, AAII            │
+│  AI interprets & writes descriptions     │
+│                                          │
+│  → Enriches JSON with context            │
+│  → Pushes to GitHub                      │
+└─────────────────────────────────────────┘
+
+┌─────────────────────────────────────────┐
+│  STATIC (manual, monthly)                │
+│                                          │
+│  ForexFactory RSS → Economic calendar    │
+│  data/calendar.json (FOMC, CPI dates)    │
+└─────────────────────────────────────────┘
+```
+
+---
+
+## 4. Build & deploy
+
 ```bash
-cd "C:\Users\coolj\.trae-cn\trae projects\macro-dashboard"
+# One-time setup
+npm install
+
+# Manual data refresh (during development)
+node scripts/update-data.js
+
+# Start local server
+npm start
+# → http://localhost:8084/
+
+# Validate JSON format
 npm run update-data
 ```
 
-**Note**: The script attempts to fetch data from free APIs (CBOE, Yahoo Finance, CNN). If network access is restricted, it will still validate and format the existing data.
+### Cloudflare deployment
 
-## Market Data Update Protocol
+- **Hosting:** Cloudflare Workers (static asset serving via `wrangler.toml`)
+- **Auto-deploy:** Every push to `main` triggers Cloudflare rebuild
+- **No build step:** Pure static files — `index.html` + `data/*.json`
+
+---
+
+## 5. Market Data Update Protocol
 
 When asked to "update all indices" or "update the dashboard", follow this protocol:
 
-### 1. Read Current Data
-First, read `data/market-data.json` to see current values and structure.
+### Step 1: Read current data
+Read `data/market-data.json` to see current values and structure.
 
-### 2. Search for Each Metric
+### Step 2: Search for each metric
 
-Search for each metric using the specified trusted sources:
+| Metric | JSON Path | Search Query | Source Layer |
+|--------|-----------|--------------|--------------|
+| **BofA Bull & Bear** | `metrics.bofa.value` | "BofA Bull Bear Indicator latest" | MacroMicro (auto) / Web search (manual) |
+| **CNN Fear & Greed** | `metrics.fearGreed.value` | "CNN Fear & Greed Index today" | CNN dataviz API (auto) |
+| **VIX Index** | `metrics.vix.value` | "VIX index current level" | CBOE API (auto) |
+| **CTA Exposure** | `metrics.cta.value` | "CTA exposure percentile latest" | Web search (manual only) |
+| **Fund Manager Cash** | `metrics.cash.value` | "fund manager cash level FMS" | Web search (manual only) |
+| **SOX Drawdown** | `metrics.sox.value` | "SOX semiconductor index drawdown" | Yahoo API (auto) / WallStreetCN (manual) |
+| **AAII Spread** | `metrics.aaii.value` | "AAII bull bear spread latest" | Web search (manual only) |
+| **NDX Performance** | `metrics.ndx.value` | "NASDAQ 100 NDX performance" | Yahoo API (auto) / WallStreetCN (manual) |
+| **Russell 2000** | `metrics.russell2000.value` | "Russell 2000 RUT performance" | Yahoo API (auto) |
 
-| Metric | JSON Path | Search Query | Trusted Sources |
-|--------|-----------|--------------|-----------------|
-| **BofA Bull & Bear** | `metrics.bofa.value` | "BofA Bull Bear Indicator latest" | MacroMicro, BofA Research, ZeroHedge |
-| **CNN Fear & Greed** | `metrics.fearGreed.value` | "CNN Fear & Greed Index today" | CNN Business (priority) |
-| **VIX Index** | `metrics.vix.value` | "VIX index current level" | Investing.com (priority), CBOE, Yahoo |
-| **CTA Exposure** | `metrics.cta.value` | "CTA exposure percentile latest" | Goldman Sachs, Bloomberg, JPMorgan |
-| **Fund Manager Cash** | `metrics.cash.value` | "fund manager cash level FMS" | Bank of America FMS, Bloomberg |
-| **SOX Drawdown** | `metrics.sox.value` | "SOX semiconductor index drawdown" | WallStreetCN (priority), NASDAQ, Yahoo |
-| **AAII Spread** | `metrics.aaii.value` | "AAII bull bear spread latest" | AAII official website |
-| **NDX Performance** | `metrics.ndx.value` | "NASDAQ 100 NDX performance" | WallStreetCN (priority), Yahoo, NASDAQ |
-| **Russell 2000** | `metrics.russell2000.value` | "Russell 2000 RUT performance" | Investing.com (priority), Yahoo |
-
-### 3. Update JSON Structure
-
-Update `data/market-data.json` with:
+### Step 3: Update JSON
 - `lastUpdated`: Current date (YYYY-MM-DD)
-- For each metric:
-  - `value`: Numeric value (no units)
-  - `description`: Brief context based on search results
-  - `status`: "bullish", "bearish", or "neutral"
+- For each metric: `value` (number), `description` (context), `status` (bullish/bearish/neutral)
 
-### 4. Validate & Push
-1. Run `npm run update-data` to validate the JSON
-2. Commit changes to git
-3. Push to GitHub (`wasahin/Marco-dashboard`)
-4. Cloudflare auto-deploys
+### Step 4: Validate & push
+1. Run `npm run update-data` to validate
+2. Commit and push to GitHub (`wasahin/Marco-dashboard`)
+3. Cloudflare auto-deploys
 
-### 5. Report Changes
-Summarize what changed for each metric.
-
-## Metric Status Rules
-
-- **BofA**: >= 8 = bearish, <= 2 = bullish, otherwise neutral
-- **Fear & Greed**: >= 60 = bearish (greed), <= 20 = bullish (fear), otherwise neutral
-- **VIX**: >= 30 = bearish, <= 15 = bullish, otherwise neutral
-- **CTA**: >= 70 = bearish (elevated), <= 30 = bullish, otherwise neutral
-- **Cash**: < 4% = bearish (low), >= 5.5% = bullish, otherwise neutral
-- **SOX**: >= 10% drawdown = bearish, <= 3% = bullish, otherwise neutral
-
-## Regime Calculation
-
-After updating metrics, recalculate regime:
-- Total risk score = sentimentScore + flowScore + positioningScore + structureScore
-- >= 6 = RED ZONE (High Risk)
-- >= 3 = YELLOW ZONE (Medium Risk)
-- < 3 = GREEN ZONE (Low Risk)
-
-## Output Format
-
-When reporting updates, use this format:
+### Step 5: Report changes
 
 ```
 ✅ Updated Market Data (YYYY-MM-DD)
@@ -128,3 +181,36 @@ When reporting updates, use this format:
 - Fear & Greed improved from deep fear to neutral
 - VIX continues to compress despite recent volatility
 ```
+
+---
+
+## 6. Metric status rules
+
+- **BofA**: >= 8 = bearish, <= 2 = bullish, otherwise neutral
+- **Fear & Greed**: >= 60 = bearish (greed), <= 20 = bullish (fear), otherwise neutral
+- **VIX**: >= 30 = bearish, <= 15 = bullish, otherwise neutral
+- **CTA**: >= 70 = bearish (elevated), <= 30 = bullish, otherwise neutral
+- **Cash**: < 4% = bearish (low), >= 5.5% = bullish, otherwise neutral
+- **SOX**: >= 10% drawdown = bearish, <= 3% = bullish, otherwise neutral
+
+---
+
+## 7. Regime calculation
+
+After updating metrics, recalculate regime:
+- Total risk score = sentimentScore + flowScore + positioningScore + structureScore
+- >= 6 = RED ZONE (High Risk)
+- >= 3 = YELLOW ZONE (Medium Risk)
+- < 3 = GREEN ZONE (Low Risk)
+
+Override rule: If BofA >= 8 AND cash < 4 AND SOX >= 10, force RED regardless of total score.
+
+---
+
+## 8. Known constraints
+
+1. **Yahoo rate-limits anonymous calls** (~100/hr/IP). Script must implement exponential backoff + jitter. Consider 3+ second delay between requests.
+2. **CBOE sometimes blocks** — script falls back to last-known value with `_stale: true` flag.
+3. **No paid API budget** — every new source must be free. Document rationale before adding.
+4. **Data is point-in-time** — for VCP entry decisions, the dashboard is context, not signal. Always cross-check with the actual chart before entry.
+5. **HTTP 4xx/5xx handling** — script must NOT crash on single-source failure. Skip + log, continue with other sources.

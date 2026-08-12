@@ -50,6 +50,13 @@
       "description": "Leveraged ETF AUM remains elevated at ~$110B; no significant change; positioning risk persists",
       "status": "neutral"
     },
+    "streetGamma": {
+      "value": 3.0,
+      "label": "Street Gamma Position",
+      "unit": "$B/1%",
+      "description": "SPX dealer gamma at +$3B per 1% move (Aug 4, optioncharts.io); flipped positive after Fed; pre-Fed negative gamma amplified July selloff; SPY GEX +$12.3B (Aug 7); positive = stabilizing",
+      "status": "neutral"
+    },
     "sox": {
       "value": 17,
       "label": "SOX Drawdown",
@@ -87,6 +94,7 @@
       "Fund cash at 3.6% — below BofA's 4% sell threshold; Hartnett urges Retreat/Rotate",
       "SOX drawdown narrowed to ~17% (Aug 12); still in bear market but recovering",
       "GS: CTA deleveraging from 75th to 44th percentile; selling pressure eased significantly",
+      "Street gamma flipped to +$3B/1% SPX (Aug 4); positive = stabilizing; pre-Fed negative gamma amplified July selloff",
       "BofA sell signal: 17 prior signals since 2002 averaged 2-3% drawdown in 3 months; max drawdown 15-20%",
       "Russell 2000 YTD +22.4%; small caps outperforming tech; rotation theme accelerating"
     ]

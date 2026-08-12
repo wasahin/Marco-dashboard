@@ -432,7 +432,9 @@
         </div>
 
         <div class="data-fetch-section">
-            <button class="btn-fetch" id="refreshBtn" onclick="loadData()">🔄 Refresh Market Data</button>
+            <button class="btn-fetch" id="refreshBtn" onclick="refreshMarketData()">🔄 Refresh Market Data</button>
+            <button class="btn-fetch" id="traeBtn" onclick="triggerTraeUpdate()" style="background: var(--btn-calc-bg); margin-left: 10px;">🔍 TRAE Web Search</button>
+            <div id="refreshStatus" class="refresh-status" style="display:none; margin-top: 12px; font-size: .85rem; color: var(--text-muted);"></div>
         </div>
 
         <!-- SUMMARY BAR -->
@@ -1007,6 +1009,105 @@
                 badge.querySelector('.status-text').textContent = 'Health data unavailable';
                 tooltip.innerHTML = 'Failed to load data/health.json';
             }
+        }
+
+        // ===== REFRESH BUTTON — Auto fetch + GitHub push =====
+        async function refreshMarketData() {
+            const btn = document.getElementById('refreshBtn');
+            const status = document.getElementById('refreshStatus');
+            const originalText = btn.innerHTML;
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="loading-spinner"></span>Fetching APIs...';
+            status.style.display = 'block';
+            status.innerHTML = '📡 Calling CBOE, CNN, Yahoo Finance APIs...';
+            status.style.color = 'var(--text-muted)';
+
+            try {
+                const response = await fetch('/api/refresh', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Refresh endpoint returned ' + response.status);
+                }
+
+                const result = await response.json();
+
+                if (result.success) {
+                    // Build success message
+                    let html = '✅ <strong>Auto refresh complete!</strong><br>';
+                    html += 'Commit: <code>' + (result.commit || 'unknown') + '</code> | ';
+                    html += 'Duration: ' + (result.durationMs / 1000).toFixed(1) + 's<br>';
+
+                    // Show which metrics were updated
+                    const autoMetrics = result.autoMetrics || {};
+                    const updatedList = Object.entries(autoMetrics).map(function(entry) {
+                        var k = entry[0], v = entry[1];
+                        var label = k === 'fearGreed' ? 'Fear&Greed' : (k === 'russell2000' ? 'RUT' : k.toUpperCase());
+                        return label + '=' + v;
+                    }).join(' | ');
+
+                    if (updatedList) {
+                        html += '📊 Updated: ' + updatedList + '<br>';
+                    }
+
+                    // Show source health
+                    var srcHealth = result.health.sources || {};
+                    var srcStatus = Object.entries(srcHealth).map(function(entry) {
+                        var name = entry[0], s = entry[1];
+                        return name + ': ' + (s.success ? '✅' : '❌');
+                    }).join(' | ');
+                    html += '🔍 Sources: ' + srcStatus + '<br>';
+
+                    // Note about manual metrics
+                    html += '<em style="color: var(--text-faint);">Manual metrics (BofA, CTA, Cash, AAII, Street Gamma) preserved. Click "🔍 TRAE Web Search" to update those.</em>';
+
+                    status.innerHTML = html;
+                    status.style.color = 'var(--color-bullish)';
+
+                    // Reload data after short delay
+                    btn.innerHTML = '⏳ Reloading dashboard...';
+                    setTimeout(function() {
+                        loadData();
+                        updateHealthBadge();
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 2000);
+                } else {
+                    throw new Error(result.message || 'Refresh failed');
+                }
+            } catch (err) {
+                // Fallback — endpoint not available (local dev) or error
+                status.innerHTML = '⚠️ Auto refresh unavailable (' + err.message + ').<br>' +
+                    '<em>Running locally? Use: <code>node scripts/update-data.js</code><br>' +
+                    'Or click "🔍 TRAE Web Search" for full AI-powered update.</em>';
+                status.style.color = 'var(--color-neutral)';
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+                // Still reload existing data
+                loadData();
+            }
+        }
+
+        // ===== TRAE WEB SEARCH — Manual metrics update =====
+        function triggerTraeUpdate() {
+            const status = document.getElementById('refreshStatus');
+            const cmd = 'update all indices';
+
+            // Copy to clipboard
+            try {
+                navigator.clipboard.writeText(cmd);
+            } catch (e) { /* clipboard may not be available */ }
+
+            status.style.display = 'block';
+            status.innerHTML = '🔍 <strong>TRAE Web Search Update</strong><br>' +
+                'Command copied to clipboard: <code>' + cmd + '</code><br>' +
+                '<em>Paste into TRAE chat to update: BofA, CTA, Cash, AAII, Street Gamma.<br>' +
+                'TRAE will search → update JSON → push to GitHub → Cloudflare auto-deploys.</em><br>' +
+                '<button onclick="loadData()" style="margin-top:8px;padding:6px 16px;background:var(--btn-fetch-bg);border:none;border-radius:6px;color:#fff;cursor:pointer;font-size:.85rem;">🔄 Reload After TRAE Update</button>';
+            status.style.color = 'var(--color-neutral)';
         }
 
         // ===== INIT =====

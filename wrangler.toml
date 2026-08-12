@@ -1,5 +1,6 @@
 name = "marco-dashboard"
 compatibility_date = "2026-07-31"
+main = "worker.js"
 
 [assets]
 directory = "."

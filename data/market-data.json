@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-09",
+  "lastUpdated": "2026-09-10",
   "metrics": {
     "bofa": {
       "value": 9.7,
@@ -9,24 +9,24 @@
       "status": "bearish"
     },
     "fearGreed": {
-      "value": 40,
+      "value": 39,
       "label": "CNN Fear & Greed",
       "unit": "/100",
-      "description": "Fear & Greed at 40 (Sep 9, CNN/cngold); slight dip from 41 on Sep 8; still in fear zone; 1-week ago ~31 (deep fear); sentiment recovering from early Sep lows but remains cautious",
+      "description": "Fear & Greed at 39 (Sep 10, CNN/cngold); down from 40 on Sep 9; still in fear zone; 1-week ago ~31 (deep fear); 1-month ago ~64 (greed); sentiment deteriorated from greed to fear in 4 weeks; stock price strength scores extreme fear",
       "status": "neutral"
     },
     "vix": {
-      "value": 15.72,
+      "value": 16.46,
       "label": "VIX Index",
       "unit": "",
-      "description": "VIX at 15.72 (Sep 8, CBOE); up from 14.3 on Sep 3; below long-term avg of ~19.4; volatility rising slightly but still compressed; neutral zone for VCP entries",
+      "description": "VIX at 16.46 (Sep 9, CBOE); up from 15.72 on Sep 8 and 14.3 on Sep 3; rising 3 consecutive days; below long-term avg of ~19.4; volatility creeping up but still compressed; neutral zone for VCP entries",
       "status": "neutral"
     },
     "aaii": {
       "value": 2.2,
       "label": "AAII Bull-Bear Spread",
       "unit": "%",
-      "description": "AAII spread at +2.2% (Sep 3 survey); improved from -11.5% on Aug 27; bulls at 39.7%, bears at 37.6%; spread below historical avg of 6.5% for 7th consecutive week; retail sentiment cautiously improving",
+      "description": "AAII spread at +2.2% (Sep 3 survey, latest available); bulls at 39.7%, bears at 37.6%; spread below historical avg of 6.5% for 7th consecutive week; next survey expected Sep 11",
       "status": "neutral"
     },
     "cta": {
@@ -51,53 +51,54 @@
       "status": "neutral"
     },
     "streetGamma": {
-      "value": 3.0,
+      "value": -1.0,
       "label": "Street Gamma Position",
       "unit": "$B/1%",
-      "description": "SPX net dealer GEX at +$101.3B (Sep 4, insiderfinance); positive gamma but SPX at 7,673 (Sep 8) approaching zero-gamma 7,657; margin narrowing; call wall $7,800, put wall $7,700; regime transitioning from stabilizing to neutral",
-      "status": "neutral"
+      "description": "SPX net dealer GEX flipped NEGATIVE to ~-$12.5B (Sep 9, Cannon Trading); was +$30B on Sep 8; gamma flip at 7,698, SPX closed at 7,636 (below flip); September monthly OPEX gamma cushion eroded; regime shifted from stabilizing to amplifying; dealers sell dips/buy rallies amplifying moves; call wall $7,700, put wall $7,600",
+      "status": "bearish"
     },
     "sox": {
-      "value": 9,
+      "value": 6,
       "label": "SOX Drawdown",
       "unit": "%",
-      "description": "SOX at 11,735 (Sep 8, Eastmoney); 3-month change -9.08%; improved from -13.82% on Sep 4; semis recovering from correction; drawdown below 10% bearish threshold; 10Y yield pressuring valuations",
+      "description": "SOX at 11,931 (Sep 9, Eastmoney/Nasdaq); 3-month change -5.74%; improved from -9.08% on Sep 8 and -13.82% on Sep 4; semis recovering steadily; drawdown well below 10% bearish threshold; SOXX up 0.68% on Sep 9",
       "status": "neutral"
     },
     "ndx": {
       "value": -4,
       "label": "NDX Performance",
       "unit": "%",
-      "description": "NDX at 29,508 (Sep 8, Sina); ~4% below 52-week high of 30,762; MAG7 resilience continues but bond yields pressuring valuations; YTD +17.4%",
+      "description": "NDX at 29,441 (Sep 9, Nasdaq); down 0.23% from Sep 8; ~4.3% below 52-week high of 30,762; MAG7 mixed (Meta +6.55% on AI agent launch, others down); YTD +17.4%; bond yields pressuring valuations",
       "status": "neutral"
     },
     "russell2000": {
-      "value": 20,
+      "value": 19,
       "label": "Russell 2000 YTD",
       "unit": "%",
-      "description": "RUT YTD +20.3% (Sep 8, VRTIX); small caps outperforming large-cap tech; rotation theme accelerating per BofA; RUT at 2,976",
+      "description": "RUT at 2,921 (Sep 9, HiStock); down 1.32% on Sep 9; YTD ~19% (VRTIX); small caps still outperforming large-cap tech on YTD basis; rotation theme intact but near-term pressure from 3-day selloff",
       "status": "bullish"
     }
   },
   "structural": {
-    "dealerGamma": "neutral",
+    "dealerGamma": "short",
     "volTarget": "high",
     "breadth": "weak"
   },
   "regime": {
     "level": "medium-risk",
     "title": "Caution Zone",
-    "advice": "CAUTIOUS: NORMAL SIZING, MONITOR ENTRIES",
+    "advice": "CAUTIOUS: REDUCE AGGRESSIVENESS, MONITOR ENTRIES CLOSELY",
     "details": [
-      "BofA at 9.7 (sell signal, Sep 4) | Fear & Greed at 40 (fear, CNN) | CTA at 67th percentile (approaching bearish)",
-      "VIX rose to 15.72 (Sep 8, CBOE); up from 14.3 on Sep 3; still below long-term avg; neutral zone",
+      "BofA at 9.7 (sell signal, Sep 4) | Fear & Greed at 39 (fear, CNN) | CTA at 67th percentile (approaching bearish)",
+      "VIX rose to 16.46 (Sep 9, CBOE); 3rd consecutive day up from 14.3 on Sep 3; rising but still below long-term avg; neutral zone",
       "Fund cash at 3.5% — below BofA's 4% sell threshold; 6th-lowest since 1998; Sep FMS not yet released",
-      "SOX drawdown improved to ~9% (Sep 8, Eastmoney); down from 14% on Sep 4; semis recovering; below 10% bearish threshold",
+      "SOX drawdown improved to ~5.74% (Sep 9, Eastmoney); down from 9% on Sep 8 and 14% on Sep 4; semis recovering; well below 10% bearish threshold",
       "GS: CTA at 67th percentile (up from 43rd); gross exposure 89th percentile; approaching full positioning; limited buying capacity",
-      "SPX GEX at +$101.3B (Sep 4); spot at 7,673 (Sep 8) approaching zero-gamma 7,657; positive gamma margin narrowing",
-      "Override NOT triggered: SOX < 10% (9%); override requires BofA≥8 AND cash<4 AND SOX≥10",
-      "Russell 2000 YTD +20.3%; small caps outperforming tech; rotation thesis intact",
-      "AAII spread at +2.2% (Sep 3); improving but below historical avg for 7th consecutive week"
+      "CRITICAL: SPX dealer gamma FLIPPED NEGATIVE to ~-$12.5B (Sep 9); was +$30B on Sep 8; SPX at 7,636 below gamma flip 7,698; September OPEX cushion eroded; regime shifted from stabilizing to amplifying",
+      "Override NOT triggered: SOX < 10% (5.74%); override requires BofA≥8 AND cash<4 AND SOX≥10",
+      "Russell 2000 YTD ~19%; small caps outperforming tech; rotation thesis intact but near-term pressure",
+      "AAII spread at +2.2% (Sep 3); next survey expected Sep 11; sentiment cautiously improving but below historical avg",
+      "3 consecutive days of market decline; SPX -0.48% on Sep 9; oil rallying on US-Iran tensions; Treasury yields higher"
     ]
   }
 }

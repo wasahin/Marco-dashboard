@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-11",
+  "lastUpdated": "2026-09-13",
   "metrics": {
     "bofa": {
       "value": 9.7,
@@ -51,7 +51,7 @@
       "status": "neutral"
     },
     "streetGamma": {
-      "value": -63.0,
+      "value": -63,
       "label": "Street Gamma Position",
       "unit": "$B/1%",
       "description": "SPX net dealer GEX DEEPLY NEGATIVE at ~-$63.45B (Sep 10 close, insiderfinance.io); SPX closed at 7,591.70, well below zero-gamma level of 7,651.07 (59 points below flip); gamma regime is AMPLIFYING — dealers sell dips/buy rallies amplifying moves; call wall $7,800, put wall $7,500; September OPEX Sep 19; Cannon Trading flags first short-term downgrade on E-mini S&P since selloff began; negative gamma persists through 4-day losing streak",

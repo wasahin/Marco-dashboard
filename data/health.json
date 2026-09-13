@@ -1,0 +1,22 @@
+{
+  "lastRun": "2026-09-13T20:30:01.922Z",
+  "durationMs": 53628,
+  "sources": {
+    "cboe": {
+      "success": false,
+      "lastValue": null,
+      "error": "getaddrinfo ENOTFOUND api.cboe.com"
+    },
+    "cnn": {
+      "success": false,
+      "lastValue": null,
+      "error": "HTTP 418"
+    },
+    "yahoo": {
+      "success": false,
+      "lastValue": null,
+      "error": "HTTP 403",
+      "rateLimitHits": 0
+    }
+  }
+}

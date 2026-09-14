@@ -2,45 +2,45 @@
   "lastUpdated": "2026-09-14",
   "metrics": {
     "bofa": {
-      "value": 9.7,
+      "value": 9.5,
       "label": "BofA Bull & Bear",
       "unit": "/10",
-      "description": "BofA Bull & Bear at 9.7 (latest, early Aug); sell signal persists for 5th month since May; highest since 2021; Hartnett urges Retreat/Rotate from tech into staples/REITs/small-caps; extreme positioning across hedge funds, fund managers, equity flows; $163B forced selling risk identified",
+      "description": "BofA Bull & Bear at 9.5 (most recent, pro.thestreet.com); eased two tenths from 9.7 in early Aug (highest since 2021); sell signal persists since May 26 (8th month); still well above 8.0 sell threshold; BofA market signal shifted from red to yellow on Sep 1 (triggered indicators dropped from 70% to 60%); Hartnett urges Retreat/Rotate from tech into staples/REITs/small-caps; $163B forced selling risk identified",
       "status": "bearish"
     },
     "fearGreed": {
       "value": 33,
       "label": "CNN Fear & Greed",
       "unit": "/100",
-      "description": "Fear & Greed at 33 (Sep 11, CNN/cngold/feargreedmeter); down from 38-39 on Sep 10 and 41 on Sep 8; deepening fear zone; 1-week ago ~48 (neutral); 1-month ago ~64 (greed); sentiment deteriorated sharply from greed to fear in 4 weeks; stock price strength and junk bond demand scores extreme fear",
+      "description": "Fear & Greed at 33 (Sep 11, CNN via finhacker.cz/kitle.xyz); recovered from 31 on Sep 10; down from 38 on Sep 9 and 41.91 on Sep 8; deepening fear zone; 1-week ago ~31 (fear); 1-month ago ~64 (greed); sentiment deteriorated sharply from greed to fear in 4 weeks; stock price strength and junk bond demand scores extreme fear",
       "status": "neutral"
     },
     "vix": {
-      "value": 17.84,
+      "value": 15.84,
       "label": "VIX Index",
       "unit": "",
-      "description": "VIX at 17.84 (Sep 10 close, CBOE); up from 16.46 on Sep 9 (+8.38%); rising 4 consecutive days from 14.3 on Sep 3; below long-term avg of ~19.4 but accelerating; 4-day market selloff driving vol up; Sep 11 pre-market VIX falling to 17.28 (-3.14%) signaling potential relief rally; neutral zone for VCP entries but trend concerning",
+      "description": "VIX at 15.84 (Sep 11 close, CBOE); down -2.00 from 17.84 on Sep 10 (-11.21%); significant volatility compression; just above 15.0 bullish threshold; relief rally on Sep 11 (SPX +0.86%); VIX had risen 4 consecutive days from 14.3 on Sep 3 to 17.84 on Sep 10 before sharp drop; now near bullish zone; VIX futures Sep 23 settlement at 16.60; neutral-to-bullish for VCP entries",
       "status": "neutral"
     },
     "aaii": {
       "value": -1.3,
       "label": "AAII Bull-Bear Spread",
       "unit": "%",
-      "description": "AAII spread at -1.3% (Sep 11 survey); bulls at 38.0%, bears at 39.3%; spread turned negative from +2.2% on Sep 3; below historical avg of 6.5% for 8th consecutive week; bears above historical avg of 31.5% for 30th consecutive week; sentiment deteriorating",
+      "description": "AAII spread at -1.3% (Sep 11 survey, latest available); bulls at 38.0%, bears at 39.3%; spread turned negative from +2.2% on Sep 3; below historical avg of 6.5% for 8th consecutive week; bears above historical avg of 31.5% for 30th consecutive week; sentiment deteriorating; no new survey until Sep 18 (next Thursday)",
       "status": "neutral"
     },
     "cta": {
-      "value": 67,
+      "value": 78,
       "label": "CTA Exposure Percentile",
       "unit": "th",
-      "description": "CTA net exposure at 67th percentile (GS, Sep); gross exposure at 89th percentile; GS estimates global CTA net long at ~$146.5B, near top of historical range; Deutsche Bank: vol-control strategies at 100th percentile; approaching full positioning; limited buying capacity; September seasonal risk flagged; BofA warns only $9B buying capacity left vs $163B forced selling risk",
-      "status": "neutral"
+      "description": "CTA US net exposure at 78th percentile (DB, most recent); up from 68th percentile a week prior; CROSSED bearish 70th threshold; global CTA at 89th percentile; GS estimates net long at ~$146.5B (up $2B from prior week); GS/stcn: CTA US stock position at 100% full; Deutsche Bank: vol-control strategies at 100th percentile; SPX CTA at 79th, RUT at 92nd, NDX lagging at 46th; limited buying capacity; BofA warns only $9B buying capacity left vs $163B forced selling risk; September seasonal risk flagged",
+      "status": "bearish"
     },
     "cash": {
       "value": 3.5,
       "label": "Fund Manager Cash",
       "unit": "%",
-      "description": "BofA FMS: cash at 3.5% (Aug survey); below 4% sell threshold; 6th-lowest since 1998; net 56% overweight equities (highest since Nov 2021); 14th consecutive month of equity overweights; Hartnett: uber-low cash = sell signal; Sep FMS not yet released",
+      "description": "BofA FMS: cash at 3.5% (Aug survey); below 4% sell threshold; 6th-lowest since 1998; net 56% overweight equities (highest since Nov 2021); 14th consecutive month of equity overweights; Hartnett: uber-low cash = sell signal; Sep FMS not yet released (expected mid-Sep)",
       "status": "bearish"
     },
     "levEtfAum": {
@@ -51,55 +51,55 @@
       "status": "neutral"
     },
     "streetGamma": {
-      "value": -63,
+      "value": 5.7,
       "label": "Street Gamma Position",
       "unit": "$B/1%",
-      "description": "SPX net dealer GEX DEEPLY NEGATIVE at ~-$63.45B (Sep 10 close, insiderfinance.io); SPX closed at 7,591.70, well below zero-gamma level of 7,651.07 (59 points below flip); gamma regime is AMPLIFYING — dealers sell dips/buy rallies amplifying moves; call wall $7,800, put wall $7,500; September OPEX Sep 19; Cannon Trading flags first short-term downgrade on E-mini S&P since selloff began; negative gamma persists through 4-day losing streak",
-      "status": "bearish"
-    },
-    "sox": {
-      "value": 8.2,
-      "label": "SOX Drawdown",
-      "unit": "%",
-      "description": "SOX at 11,614.17 (Sep 10 close, Nasdaq OMX/Sina); fell -2.66% on Sep 10 (worst day of 4-day selloff); 3-month change ~-8.2% (worsened from -5.74% on Sep 9); SOXX 18.8% below ATH set Jun 22; semis under heavy pressure; PPI hot + oil break $100 + Fed hike fears; drawdown approaching 10% bearish threshold; chip/storage/optical comm sectors all down",
+      "description": "SPX net dealer GEX shifted POSITIVE to ~+$5.65B (Sep 11, insiderfinance.io); MAJOR shift from -$63.45B on Sep 10; SPX closed at 7,656.98 (FRED), just 12 points below zero-gamma level of 7,668.36; gamma regime NEAR-NEUTRAL — no longer amplifying moves as severely; call wall $7,800, put wall $7,500; September OPEX Sep 19; relief rally on Sep 11 shifted gamma from deeply negative to slightly positive; dealers now in volatility-suppressing mode above 7,668; below that level, marginal gamma still slightly negative",
       "status": "neutral"
     },
+    "sox": {
+      "value": 10.23,
+      "label": "SOX Drawdown",
+      "unit": "%",
+      "description": "SOX at 11,824.00 (Sep 11 close, Eastmoney/Nasdaq OMX); +1.81% on Sep 11 (relief rally); 3-month change at -10.23% (CROSSED 10% bearish threshold!); SOX recovered from 11,614.17 on Sep 10; semis under heavy pressure despite one-day bounce; PPI hot + oil break $100 + Fed hike fears; drawdown now in BEARISH territory; SOXX ~18% below ATH set Jun 22; chip/storage/optical comm sectors all under pressure",
+      "status": "bearish"
+    },
     "ndx": {
-      "value": -5.3,
+      "value": -4.53,
       "label": "NDX Performance",
       "unit": "%",
-      "description": "NDX at 29,146.69 (Sep 10 close, Nasdaq.com); down -0.93% on Sep 10; ~5.3% below 52-week high of 30,762.20; YTD ~17%; 4-day losing streak; PPI hot, oil above $100, Fed hike fears pressuring valuations; MAG7 broadly weak; Nasdaq Composite at 26,081.72 (-0.65%)",
+      "description": "NDX at 29,368.44 (Sep 11 close, Nasdaq OMX); +0.91% on Sep 11 (relief rally); improved from -5.3% to ~4.53% below 52wk high of 30,762.20; YTD ~17%; recovery after 4-day losing streak; PPI hot, oil above $100, Fed hike fears pressuring valuations; MAG7 broadly weak; Nasdaq Composite also recovered",
       "status": "neutral"
     },
     "russell2000": {
-      "value": 18,
+      "value": 18.5,
       "label": "Russell 2000 YTD",
       "unit": "%",
-      "description": "RUT at 2,890.95 (Sep 10 close, Barchart/HiStock); fell -1.04% on Sep 10 (-30.29 pts); YTD ~18% (Morningstar); small caps still outperforming large-cap tech (S&P 500 +11.4%, R1000 +11.3%); rotation theme intact but near-term pressure from 4-day selloff; RUT down 2% over 4 days",
+      "description": "RUT at 2,903.94 (Sep 11 close, GuruFocus); +0.45% on Sep 11 (relief rally); YTD ~18.5% (improved from ~18%); IWM NAV $289.00 (+0.46%); small caps still outperforming large-cap tech (S&P 500 +11.4%, R1000 +11.3%); rotation theme intact; relief rally on Sep 11 after 4-day selloff; FOMC meeting Sep 15-16 could be reckoning for small caps (rate hike odds increasing)",
       "status": "bullish"
     }
   },
   "structural": {
-    "dealerGamma": "short",
+    "dealerGamma": "neutral",
     "volTarget": "maxed",
     "breadth": "weak"
   },
   "regime": {
-    "level": "medium-risk",
-    "title": "Caution Zone",
-    "advice": "CAUTIOUS: REDUCE AGGRESSIVENESS, MONITOR ENTRIES CLOSELY; NEGATIVE GAMMA AMPLIFYING MOVES; WATCH SOX APPROACHING 10% AND CTA NEARING 70TH",
+    "level": "high-risk",
+    "title": "Red Zone",
+    "advice": "REDUCE RISK: OVERRIDE TRIGGERED — BofA>=8 (9.5) AND cash<4% (3.5%) AND SOX>=10% (10.23%); CTA crossed 70th percentile (78th); forced selling risk $163B vs $9B buying capacity; avoid new VCP entries or use minimum position size; negative gamma stabilized but structural risk elevated; FOMC Sep 15-16 adds uncertainty",
     "details": [
-      "BofA at 9.7 (sell signal persists, early Aug) | Fear & Greed at 33 (deepening fear, CNN) | CTA at 67th percentile (approaching bearish 70th)",
-      "VIX rose to 17.84 (Sep 10 close, CBOE); +8.38% in one day from 16.46; 4th consecutive day up from 14.3 on Sep 3; rising but still below long-term avg ~19.4; Sep 11 pre-market VIX falling to 17.28 (-3.14%) signaling potential relief",
+      "OVERRIDE RULE TRIGGERED: BofA>=8 (9.5) ✓ AND cash<4 (3.5%) ✓ AND SOX>=10 (10.23%) ✓ → RED ZONE FORCED regardless of total score",
+      "BofA at 9.5 (eased from 9.7, still sell signal since May 26; highest since 2021) | Fear & Greed at 33 (fear zone, CNN) | CTA at 78th percentile (CROSSED bearish 70th threshold!)",
+      "VIX dropped to 15.84 (Sep 11 close, CBOE); -11.21% (-2.00) from 17.84 on Sep 10; significant vol compression; just above 15.0 bullish threshold; relief rally on Sep 11",
       "Fund cash at 3.5% (Aug FMS) — below BofA's 4% sell threshold; 6th-lowest since 1998; net 56% overweight equities (highest since Nov 2021); Sep FMS not yet released",
-      "SOX drawdown WORSENED to ~8.2% (Sep 10, Nasdaq OMX); SOX fell -2.66% to 11,614.17; up from 5.74% on Sep 9; approaching 10% bearish threshold; SOXX 18.8% below ATH (Jun 22); semis under heavy pressure",
-      "GS: CTA at 67th percentile; gross at 89th; Deutsche Bank: vol-control at 100th percentile; GS net long estimate ~$146.5B; limited buying capacity; BofA warns only $9B buying left vs $163B forced selling risk",
-      "CRITICAL: SPX dealer gamma DEEPLY NEGATIVE at ~-$63.45B (Sep 10 close, insiderfinance.io); SPX at 7,591.70, 59 points below zero-gamma 7,651.07; regime is AMPLIFYING — dealers sell dips/buy rallies amplifying moves; Cannon Trading flags first short-term downgrade on E-mini S&P; call wall $7,800, put wall $7,500; Sep OPEX Sep 19",
-      "Override NOT triggered: BofA>=8 (9.7) ✓, cash<4 (3.5%) ✓, SOX>=10 (8.2%) ✗ — SOX below 10% threshold but approaching",
-      "Russell 2000 YTD ~18% (Sep 10, Morningstar); RUT at 2,890.95; small caps outperforming large-cap tech; rotation thesis intact but near-term pressure from 4-day selloff",
-      "AAII spread turned NEGATIVE at -1.3% (Sep 11 survey); bulls 38.0%, bears 39.3%; below historical avg 6.5% for 8th consecutive week; sentiment deteriorating",
-      "NDX at 29,146.69 (Sep 10, Nasdaq.com); -0.93%; ~5.3% below 52wk high; YTD ~17%; 4-day losing streak; PPI hot + oil above $100 + Fed hike fears pressuring tech valuations",
-      "Market context: 4-day losing streak ending Sep 10 (Dow -0.6%, SPX -0.58%, Nasdaq -0.65%, RUT -1.04%); SPX -2% over 4 days; PPI unexpectedly hot, US oil broke $100, Fed hike bets surging; Sep 11 pre-market shows VIX falling (-3.14%) signaling potential relief rally; September seasonal risk + positioning stress persist"
+      "SOX drawdown CROSSED 10% to -10.23% (Sep 11, Eastmoney 3-month change); SOX at 11,824 (+1.81% relief rally); now in BEARISH territory; SOXX ~18% below ATH (Jun 22); semis under heavy pressure",
+      "DB: CTA US at 78th percentile (up from 68th, CROSSED bearish 70th); global at 89th; GS: CTA net long ~$146.5B; GS/stcn: 100% full position; Deutsche Bank: vol-control at 100th percentile; limited buying capacity; BofA: only $9B buying left vs $163B forced selling risk",
+      "CRITICAL SHIFT: SPX dealer GEX moved from -$63.45B (Sep 10) to +$5.65B (Sep 11, insiderfinance.io); SPX at 7,656.98, just 12 points below zero-gamma 7,668.36; gamma regime NEAR-NEUTRAL — no longer amplifying moves as severely; call wall $7,800, put wall $7,500; Sep OPEX Sep 19",
+      "Russell 2000 YTD ~18.5% (Sep 11, GuruFocus); RUT at 2,903.94; small caps outperforming large-cap tech; rotation thesis intact; FOMC Sep 15-16 could be reckoning for small caps",
+      "AAII spread NEGATIVE at -1.3% (Sep 11 survey); bulls 38.0%, bears 39.3%; below historical avg 6.5% for 8th consecutive week; bears above historical avg 31.5% for 30th consecutive week; no new survey until Sep 18",
+      "NDX at 29,368.44 (Sep 11, Nasdaq OMX); +0.91%; improved to ~4.53% below 52wk high (from 5.3%); YTD ~17%; relief rally after 4-day losing streak; PPI hot + oil above $100 + Fed hike fears pressuring tech valuations",
+      "Market context: Sep 11 relief rally (SPX +0.86% to 7,656.98, NDX +0.91%, SOX +1.81%, RUT +0.45%, VIX -11.21% to 15.84) after 4-day selloff; however structural risk ESCALATED — SOX crossed 10% drawdown, CTA crossed 70th percentile, override rule now triggered; FOMC meeting Sep 15-16 with rate hike odds increasing; September OPEX Sep 19; September seasonal risk + positioning stress persist"
     ]
   }
 }

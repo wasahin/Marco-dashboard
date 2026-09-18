@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-09-17T03:01:08.515Z",
-  "durationMs": 62601,
+  "lastRun": "2026-09-18T03:01:09.175Z",
+  "durationMs": 63046,
   "sources": {
     "cboe": {
       "success": false,
@@ -15,7 +15,7 @@
     "yahoo": {
       "success": false,
       "lastValue": null,
-      "error": "HTTP 403",
+      "error": "Request timeout",
       "rateLimitHits": 0
     }
   }

@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-10-07T03:01:01.603Z",
-  "durationMs": 56838,
+  "lastRun": "2026-10-08T03:01:01.200Z",
+  "durationMs": 55574,
   "sources": {
     "cboe": {
       "success": false,
@@ -10,7 +10,7 @@
     "cnn": {
       "success": false,
       "lastValue": null,
-      "error": "HTTP 418"
+      "error": "getaddrinfo ENOTFOUND production.dataviz.cnn.io"
     },
     "yahoo": {
       "success": false,

@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15",
+  "lastUpdated": "2026-10-16",
   "metrics": {
     "bofa": {
       "value": 8.1,
@@ -58,14 +58,14 @@
       "status": "neutral"
     },
     "sox": {
-      "value": 20.0,
+      "value": 20,
       "label": "SOX Drawdown",
       "unit": "%",
       "description": "SOX at 11,684.38 (Oct 14 close, Nasdaq OMX); crashed -4.30% on Oct 14; down 11% since Oct 6 peak (~13,128); >20% below June ATH (~14,605) — BEAR MARKET; SOX facing 6-day losing streak into Oct 15 (down ~4.2% intraday, Sina); >50% of SOX components fell >=10% in 6 sessions; selloff spread from memory chips to design and equipment; SOX at 12,236.79 on Oct 12 (Nasdaq OMX); 1Y: +86.99%",
       "status": "bearish"
     },
     "ndx": {
-      "value": -4.0,
+      "value": -4,
       "label": "NDX Performance",
       "unit": "%",
       "description": "NDX at ~29,900 (Oct 14 close est, Nasdaq OMX); down -2.06% on Oct 14; high 30,436.60, low 29,861.06; ~4.0% below 52wk high of 30,762.20 (improved from -5.9% on Sep 16); NDX futures down 1.24% pre-market Oct 15; Nasdaq Composite at 26,692.87 (Oct 14, -1.88%); PPI exceeded expectations on Oct 15 adding pressure; tech under pressure from rising yields and chip selloff; XNDX 1Y: +21.81%",

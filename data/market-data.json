@@ -2,80 +2,80 @@
   "lastUpdated": "2026-10-19",
   "metrics": {
     "bofa": {
-      "value": 8.1,
+      "value": 7.4,
       "label": "BofA Bull & Bear",
       "unit": "/10",
-      "description": "BofA Bull & Bear at 8.1 (Oct 8, Finvaulta/StockWire X); unchanged from last update; still above 8.0 sell threshold; sell signal persists since May 26 (6th month); Hartnett maintains defensive, risk-off stance ahead of Nov US midterm elections; 54 central bank rate hikes in 2026; FMS positioning at 100th percentile; hedge funds net sold global AI stocks for 5 consecutive days Oct 8-14 (GS Prime), reversing all net buying since early 2025; de-grossing may be ongoing",
-      "status": "bearish"
-    },
-    "fearGreed": {
-      "value": 32.43,
-      "label": "CNN Fear & Greed",
-      "unit": "/100",
-      "description": "Fear & Greed at 32.43 (Oct 15 intraday, CNN API production.dataviz.cnn.io); rating 'fear'; down sharply from 44.74 on Oct 13 and 32.33 previous close (Oct 14); 1-week ago 39.8; sentiment deteriorated significantly during Oct 14 selloff (SPX -1.11%, SOX -4.30%); market staged V-shaped recovery on Oct 15 (SPX +0.33%, Dow +1.08%) but F&G barely recovered; Finhacker shows 30 at Oct 15 close; deepening fear zone but not yet extreme",
+      "description": "BofA Bull & Bear at 7.4 (Oct 16, Morningstar/AInvest/GuruFocus/StockStar); DROPPED from 8.1; sell signal ENDED after ~5 months (since May 26); back in neutral zone (2-8); Hartnett notes 'too early to buy' despite sell signal ending; 54 central bank rate hikes in 2026; FMS positioning defensive ahead of Nov US midterms; hedge funds de-grossing continues (GS Prime: 5 consecutive days of net selling Oct 8-14, reversing 2 years of AI buying); global equity breadth deterioration drove indicator lower",
       "status": "neutral"
     },
+    "fearGreed": {
+      "value": 18,
+      "label": "CNN Fear & Greed",
+      "unit": "/100",
+      "description": "Fear & Greed at 18 (Oct 16 close, Finhacker/Kitle); EXTREME FEAR; down sharply from 32.43 (Oct 15 intraday) and 31.54 (Oct 15 close per CNN API); CNN API intraday snapshot at 11:36 AM ET was 28.06 (fear); deteriorated further intraday as market sold off (SPX -1.09%, SOX -3.83%, NDX -2.50%, VIX +21.45%); 1-week ago 46.49; massive sentiment deterioration during Oct 16 tech selloff — AI software valuations reversed; Finhacker shows 18 at Oct 16 close; Kitle shows 17.94; extreme fear zone (<=20) = potential contrarian reversal zone but can stay extreme",
+      "status": "bullish"
+    },
     "vix": {
-      "value": 16.46,
+      "value": 19.99,
       "label": "VIX Index",
       "unit": "",
-      "description": "VIX at 16.46 (Oct 15 close, CBOE); down -0.41 (-2.43%) from 16.87 on Oct 14; VIX futures at 16.81 (Nov); term structure in contango; VIX declined on Oct 15 as market staged V-shaped recovery (SPX +0.33%); neutral zone but still elevated above 15 bullish threshold; SPX at 7,744.06 (Oct 15 close, +0.33%) recovered from 7,718.94 but still below zero-gamma flip at ~7,748; volatility may persist given SOX 6-day losing streak and hedge fund de-grossing",
+      "description": "VIX at 19.99 (Oct 16 close, CBOE); SURGED +3.53 (+21.45%) from 16.46 on Oct 15; intraday high 22.31; biggest single-day VIX spike in weeks; VIX futures at 16.81 (Nov settlement); term structure in contango but spot VIX surged above front-month futures (backwardation risk); VIX spiked as market sold off (SPX -1.09%, SOX -3.83%, NDX -2.50%); neutral zone (15-30) but elevated and rising; approaching 20 threshold; SPX at 7,660 (Oct 16 close, -1.09%) — well below zero-gamma flip at 7,729; volatility expanding regime; weekend risk premium elevated",
       "status": "neutral"
     },
     "aaii": {
       "value": -2.9,
       "label": "AAII Bull-Bear Spread",
       "unit": "%",
-      "description": "AAII spread at -2.9% (Oct 14, FinBro Finance/Borsvarlden auto from AAII); down from +1.3% on Oct 9; bulls 38.7% (down from 40.3%), bears 41.6% (up from 39.0%); bearish sentiment above historical avg 31.5% for 36th consecutive week; spread below historical avg 6.5% for 13th consecutive week; sentiment deteriorated as market sold off Oct 14; AAII official site may update with Oct 16 survey results; retail investors growing more cautious",
+      "description": "AAII spread at -2.9% (Oct 16 survey release, covering Oct 9-15 survey period; Rallies/SquawkNews/StockMarketData); unchanged from previous; down from +1.3% on Oct 9 survey; bulls 38.7% (down from 40.3%), bears 41.6% (up from 39.0%); bearish sentiment above historical avg 31.5% for 37th consecutive week; spread below historical avg 6.5% for 14th consecutive week; retail sentiment deteriorated during Oct selloff; next survey release Oct 23 (covering Oct 16-22 — will capture Oct 16 crash sentiment)",
       "status": "neutral"
     },
     "cta": {
       "value": 54,
       "label": "CTA Exposure Percentile",
       "unit": "th",
-      "description": "CTA global equity net exposure at 54th percentile (Oct 4, GS FICC); no newer specific percentile available; ~$72B net long global equities; GS Prime reports hedge funds net sold global AI stocks for 5 consecutive days Oct 8-14, reversing all net buying since early 2025; GS notes hedge fund L/S positioning at historically low levels amid rates and energy volatility; GS models asymmetric SPX risk: 2-sigma down triggers ~$45B CTA selling vs only ~$5.5B buying on 2-sigma up; Deutsche Bank vol-control strategies previously at 100th percentile — likely normalizing further",
+      "description": "CTA global equity net exposure at 54th percentile (Oct 4, GS FICC — latest available; no newer specific percentile data found as of Oct 19); ~$72B net long global equities; GS models asymmetric SPX risk: 2-sigma down triggers ~$45B CTA selling vs only ~$5.5B buying on 2-sigma up; GS Prime: hedge funds net sold global AI stocks for 5 consecutive days Oct 8-14, reversing all net buying since early 2025; GS notes hedge fund L/S positioning at historically low levels amid rates and energy volatility; Deutsche Bank vol-control strategies previously at 100th percentile — likely normalizing further after Oct 16 selloff; CTA exposure likely DROPPED sharply on Oct 16 given VIX +21% — may be below 50th percentile now",
       "status": "neutral"
     },
     "cash": {
       "value": 3.9,
       "label": "Fund Manager Cash",
       "unit": "%",
-      "description": "BofA Oct FMS: cash at 3.9% (released Oct 13, Morningstar/Sina/iqrynku/Summa Money); unchanged from Sep FMS; below 4% sell threshold but stable; 161 institutional managers, ~$453B AUM; surveyed Oct 2-8; net equity longs slipped to 44% from 49%; tech overweight at highest since Aug 2020; biggest cut to bank longs since Mar 2023; inflation expectations lowest in ~2 years; belief Fed will stand pat this month; Hartnett says investors need sustained Fed cuts to deploy cash",
+      "description": "BofA Oct FMS: cash at 3.9% (released Oct 13, 10jqka/MaceNews/Docin/SummaMoney); UNCHANGED from Sep FMS; below 4% sell threshold (bearish); 185 institutional managers, $512B AUM (per MaceNews — larger panel than previously reported); surveyed Oct 2-8; net equity longs slipped to 44% from 49%; tech overweight at highest since Aug 2020 (net 37% per Summa Money); biggest cut to bank longs since Mar 2023; inflation expectations lowest in ~2 years; belief Fed will stand pat this month; Hartnett says sustained Fed cuts needed to deploy cash; November midterms add uncertainty",
       "status": "bearish"
     },
     "levEtfAum": {
       "value": 110,
       "label": "Leveraged ETF AUM",
       "unit": "$B",
-      "description": "Leveraged ETF AUM remains elevated at ~$110B; no significant change; positioning risk persists amid hedge fund de-grossing",
+      "description": "Leveraged ETF AUM remains elevated at ~$110B; no significant change; positioning risk persists amid hedge fund de-grossing and Oct 16 selloff",
       "status": "neutral"
     },
     "streetGamma": {
-      "value": -47.6,
+      "value": -7.41,
       "label": "Street Gamma Position",
       "unit": "$B/1%",
-      "description": "SPX dealer GEX at -$47.6B (Oct 14, SquawkFlow); MAJOR reversal from +$84.76B on Oct 8; SPX at 7,718.94 on Oct 14 — below zero-gamma flip at ~7,748; SPX recovered to 7,744.06 on Oct 15 (+0.33%) but still near flip level; InsiderFinance shows Net GEX near zero (-$104.81M) with spot at $7,744.09 — likely different methodology (nearby expiries only); negative gamma = volatility-expanding environment; call wall $7,900, put wall $7,500; SpotGamma notes gamma concentrations near current levels; negative gamma regime increases tail risk",
+      "description": "SPX dealer GEX at -$7.41B (Oct 16, SquawkFlow); MAJOR IMPROVEMENT from -$47.6B on Oct 14; post-options-expiration reset (Oct 16 was monthly OpEx — third Friday); massive options open interest rolled off, resetting GEX calculation; SPX at 7,660 (Oct 16 close) — below zero-gamma flip at 7,729 (negative gamma regime persists); call wall $7,900, put wall $7,650 (raised from $7,500); swing line 7,761; net GEX is 16th most negative of 59 sessions since Jul 28; InsiderFinance shows Net GEX near zero (-$104.81M, different methodology — nearby expiries only); negative gamma = volatility-expanding environment but significantly less pressure than pre-expiration; tail risk reduced but not eliminated",
       "status": "neutral"
     },
     "sox": {
-      "value": 20.7,
+      "value": 23.74,
       "label": "SOX Drawdown",
       "unit": "%",
-      "description": "SOX at 11,581.22 (Oct 15 close, Nasdaq indexes); down -103.16 (-0.88%) from 11,684.38 on Oct 14; 6-day losing streak (Oct 8-15); >20.7% below June ATH (~14,605) — BEAR MARKET; down ~11.8% from Oct 6 peak (~13,128); >50% of SOX components fell >=10% in 6 sessions; selloff spread from memory chips to design and equipment; SOX 1Y: +70.31%; iShares SOXX NAV down -4.50% on Oct 14; Korean KOSPI crashed ~8% on AI concerns before rebounding; chip selloff spreading globally",
+      "description": "SOX at 11,137.29 (Oct 16 close, Nasdaq OMX/Barchart); down -443.93 (-3.83%) from 11,581.22 on Oct 15; DEEPER BEAR MARKET — now 23.74% below June ATH (~14,605), worsened from 20.7% on Oct 15; 7-day losing streak (Oct 8-16); SOX down ~15.1% from Oct 6 peak (~13,128); day's range 11,128.08-11,480.70; iShares SOXX NAV down additional ~3.8% on Oct 16; chip selloff spread from memory chips to design and equipment; Korean KOSPI crashed ~8% on AI concerns before rebounding; AI software valuations reversed sharply (Nasdaq article); SOX 1Y: still +~65% but paring gains; sector-wide de-rating ongoing",
       "status": "bearish"
     },
     "ndx": {
-      "value": -2.7,
+      "value": -5.12,
       "label": "NDX Performance",
       "unit": "%",
-      "description": "NDX at 29,935.59 (Oct 15 close, Nasdaq OMX); down -19.98 (-0.07%) from 29,955.57 on Oct 14; intraday high 29,985.62, low 29,408.41; ~2.7% below 52wk high of 30,762.20; market staged V-shaped recovery on Oct 15 (Nasdaq Composite +0.08% at 26,713.03); improved from Oct 14 selloff (-2.06%); NDX resilient relative to SOX; XNDX 1Y: +21.81%; tech under pressure from rising yields and chip selloff but mega-cap holding better than semis",
+      "description": "NDX at 29,187.55 (Oct 16 close, Nasdaq OMX); down -748.05 (-2.50%) from 29,935.59 on Oct 15; intraday high 29,822.91, low 29,073.29; now ~5.12% below 52wk high of 30,762.20 (worsened from 2.7% on Oct 15); Nasdaq Composite -2.15% to 26,140; tech under pressure from rising yields and chip selloff; AI software valuations reversed (Nasdaq article); mega-cap holding better than semis but still down significantly; XNDX (total return) -2.50%; market staged broad selloff on Oct 16 — biggest weekly tech drop in over a year (Xinhua); NDX 1Y: still +~18% but paring gains rapidly",
       "status": "neutral"
     },
     "russell2000": {
-      "value": 12.4,
+      "value": 10.6,
       "label": "Russell 2000 YTD",
       "unit": "%",
-      "description": "RUT YTD at ~12.4% (Oct 15, iShares/LSEG); up from 10.9% on Oct 14; IWM NAV $274.99 (Oct 15, +$3.75/+1.38%); 52wk range $229.10-$304.98; RUT ATH ~$304.98 (IWM); ~9.8% below ATH; small caps outperformed on Oct 15 recovery (Dow +1.08%); RUT daily +1.38% vs SPX +0.33%; small caps benefiting from rotation away from mega-cap tech; SPX reclaimed 2026 lead over RUT but gap narrowing; rising treasury yields remain headwind; 1Y: +13.53%",
+      "description": "RUT YTD at ~10.6% (Oct 16 computed from iShares YTD 12.44% on Oct 15 × 1-day NAV change -1.66%); down from 12.4% on Oct 15; IWM NAV $270.43 (Oct 16, -$4.56/-1.66%); 52wk range $229.10-$304.98; RUT ~11.3% below ATH ($304.98, worsened from 9.8%); small caps fell less than mega-cap tech on Oct 16 (RUT -1.66% vs NDX -2.50% vs SOX -3.83%); rotation toward small caps away from mega-cap tech continues; rising treasury yields remain headwind; RUT 1Y: ~+13.5%; small caps relatively resilient during tech selloff",
       "status": "neutral"
     }
   },
@@ -85,22 +85,22 @@
     "breadth": "weak"
   },
   "regime": {
-    "level": "high-risk",
-    "title": "Red Zone",
-    "advice": "REDUCE RISK: OVERRIDE TRIGGERED — BofA>=8 (8.1) AND cash<4% (3.9%) AND SOX>=10% (20.7%); SOX in bear market (>20% below June ATH); GEX reversed to -$47.6B on Oct 14 (negative gamma regime, SPX below zero-gamma flip); hedge funds de-grossing aggressively (5 consecutive days of net selling Oct 8-14, reversing 2 years of net buying per GS Prime); VIX at 16.46 (declined on Oct 15 recovery but still elevated); F&G dropped to 32.43 (fear zone) from 44.74 on Oct 13; SOX 6-day losing streak; market staged V-shaped recovery on Oct 15 (SPX +0.33%, Dow +1.08%) but SOX still fell; avoid new VCP entries or use minimum position size; November midterms add political uncertainty; GS warns asymmetric SPX risk: ~$45B CTA selling on 2-sigma down vs ~$5.5B buying on 2-sigma up",
+    "level": "medium-risk",
+    "title": "Yellow Zone",
+    "advice": "CAUTION — REDUCE POSITION SIZE: Override NO LONGER triggered (BofA dropped to 7.4, below 8.0 threshold — sell signal ENDED after ~5 months). F&G in EXTREME FEAR at 18 (contrarian bullish — potential reversal zone). GEX improved to -$7.41B post-options-expiration (Oct 16 was monthly OpEx). BUT: SOX in DEEPER bear market (23.74% drawdown, worsened from 20.7%); VIX SURGED 21% to 19.99 (volatility expanding, intraday high 22.31); SPX below zero-gamma flip (7,660 vs 7,729); cash still at 3.9% (below 4% sell threshold); NDX drawdown widened to 5.12% from 2.7%. Mixed signals — sentiment washed out (F&G extreme fear) but structure deteriorating (VIX surge, SOX deeper bear market). Wait for VIX to stabilize and F&G to confirm reversal before new VCP entries. Use minimum position size for any breakouts. November midterms add political uncertainty. Weekend risk elevated given VIX spike.",
     "details": [
-      "OVERRIDE RULE TRIGGERED: BofA>=8 (8.1) ✓ AND cash<4 (3.9%) ✓ AND SOX>=10 (20.7%) ✓ → RED ZONE FORCED regardless of total score",
-      "BofA at 8.1 (sell signal since May 26; 6th month; unchanged; above 8.0 threshold; Hartnett defensive ahead of midterms; 54 central bank hikes in 2026; hedge funds net sold AI stocks 5 consecutive days Oct 8-14, reversing 2 years of net buying)",
-      "Fear & Greed at 32.43 (Oct 15 intraday, CNN API); down sharply from 44.74 on Oct 13; rating 'fear'; previous close 32.33 (Oct 14); 1-week ago 39.8; deteriorated significantly during Oct 14 selloff; market recovered Oct 15 but F&G barely moved; Finhacker shows 30 at close",
-      "VIX at 16.46 (Oct 15 close, CBOE); down -0.41 (-2.43%) from 16.87 on Oct 14; VIX futures at 16.81; contango term structure; VIX declined on Oct 15 V-shaped recovery but still above 15 bullish threshold; neutral zone but persistently elevated",
-      "Fund cash at 3.9% (Oct FMS released Oct 13; unchanged from Sep; below 4% sell threshold; 161 managers, $453B AUM; tech overweight highest since Aug 2020; net equity longs slipped to 44% from 49%; inflation expectations lowest in ~2 years; Hartnett says sustained Fed cuts needed to deploy cash)",
-      "SOX drawdown at 20.7% (Oct 15, from 20.0% on Oct 14); SOX at 11,581.22; BEAR MARKET (>20% below June ATH ~14,605); down 11.8% from Oct 6 peak (~13,128); 6-day losing streak (Oct 8-15); >50% of components fell >=10% in 6 sessions; selloff spread from memory to design/equipment; Korean KOSPI crashed ~8% on AI concerns; SOX 1Y: +70.31%",
-      "CTA global at 54th percentile (Oct 4, GS FICC); no newer specific percentile; ~$72B net long global equities; GS Prime: hedge funds net sold AI stocks 5 consecutive days Oct 8-14, reversing all net buying since early 2025; GS: L/S positioning at historically low levels; asymmetric SPX risk: ~$45B CTA selling on 2-sigma down vs ~$5.5B buying on 2-sigma up; Deutsche Bank vol-control previously at 100th percentile — normalizing",
-      "GEX REVERSED from +$84.76B (Oct 8) to -$47.6B (Oct 14, SquawkFlow); SPX at 7,718.94 on Oct 14, recovered to 7,744.06 on Oct 15 (+0.33%); SPX below zero-gamma flip at ~7,748; InsiderFinance shows Net GEX near zero (-$104.81M, different methodology); negative gamma = volatility-expanding environment; call wall $7,900, put wall $7,500; tail risk elevated in negative gamma regime",
-      "Russell 2000 YTD at 12.4% (Oct 15, iShares); up from 10.9% on Oct 14; IWM NAV $274.99 (+1.38%); RUT ~9.8% below ATH ($304.98); small caps outperformed on Oct 15 recovery (+1.38% vs SPX +0.33%); rotation toward small caps away from mega-cap tech; rising yields remain headwind; 1Y: +13.53%",
-      "AAII spread at -2.9% (Oct 14, FinBro/Borsvarlden); down from +1.3% on Oct 9; bulls 38.7% (down from 40.3%), bears 41.6% (up from 39.0%); bearish sentiment above historical avg 31.5% for 36th consecutive week; spread below historical avg 6.5% for 13th consecutive week; retail sentiment deteriorated during selloff",
-      "NDX at 29,935.59 (Oct 15, Nasdaq OMX); -0.07% on Oct 15; ~2.7% below 52wk high (30,762.20); intraday high 29,985.62, low 29,408.41; market staged V-shaped recovery on Oct 15 (Nasdaq Composite +0.08% at 26,713.03); NDX resilient relative to SOX; XNDX 1Y: +21.81%",
-      "Market context: SPX at 7,744.06 (Oct 15, +0.33%); Dow at 52,177.69 (+1.08%); Nasdaq Composite at 26,713.03 (+0.08%); SOX in bear market (11,581.22, -0.88%, 6-day losing streak); V-shaped recovery on Oct 15 but SOX still declined; hedge funds de-grossing (5 days net selling, reversing 2 years of AI buying); GEX negative at -$47.6B; F&G in fear zone at 32.43; November midterms add uncertainty; structural risk ELEVATED — override triggered, SOX bear market, negative gamma regime, hedge fund de-grossing"
+      "OVERRIDE RULE NOT TRIGGERED: BofA=7.4 (< 8.0 threshold) — override requires BofA>=8 AND cash<4 AND SOX>=10. BofA dropped below 8.0, so override OFF. Previous RED zone (override-triggered) now DOWNGRADED to YELLOW (score-based: sentiment=0 [F&G extreme fear offsets], flow=2 [cash bearish], positioning=2 [SOX bearish], structure=1 [VIX elevated/GEX neutral] → total=5, YELLOW)",
+      "BofA at 7.4 (Oct 16, Morningstar/AInvest/GuruFocus/StockStar); DROPPED from 8.1; sell signal ENDED after ~5 months (since May 26); back in neutral zone (2-8); Hartnett: 'too early to buy' despite sell signal ending; global equity breadth deterioration drove indicator lower; hedge funds de-grossing continues (GS Prime: 5 consecutive days net selling Oct 8-14)",
+      "Fear & Greed at 18 (Oct 16 close, Finhacker/Kitle); EXTREME FEAR; down sharply from 32.43 (Oct 15 intraday) and 31.54 (Oct 15 close); CNN API intraday at 11:36 AM ET was 28.06 (fear) — deteriorated further as market sold off; 1-week ago 46.49; massive sentiment deterioration during Oct 16 tech selloff; extreme fear zone (<=20) = potential contrarian reversal zone but can stay extreme",
+      "VIX at 19.99 (Oct 16 close, CBOE); SURGED +3.53 (+21.45%) from 16.46; intraday high 22.31; biggest single-day VIX spike in weeks; VIX futures 16.81 (Nov); term structure contango but spot VIX above front-month futures risk; VIX spiked as market sold off; neutral zone (15-30) but elevated and rising; approaching 20 threshold; SPX at 7,660 — well below zero-gamma flip at 7,729; volatility expanding regime",
+      "Fund cash at 3.9% (Oct FMS released Oct 13; UNCHANGED from Sep; below 4% sell threshold; 185 managers, $512B AUM per MaceNews; tech overweight highest since Aug 2020; net equity longs slipped to 44% from 49%; inflation expectations lowest in ~2 years; Hartnett says sustained Fed cuts needed to deploy cash)",
+      "SOX drawdown at 23.74% (Oct 16, from 20.7% on Oct 15); SOX at 11,137.29; DEEPER BEAR MARKET (>20% below June ATH ~14,605); down ~15.1% from Oct 6 peak (~13,128); 7-day losing streak (Oct 8-16); day's range 11,128.08-11,480.70; selloff spread from memory to design/equipment; AI software valuations reversed (Nasdaq article); Korean KOSPI crashed ~8% on AI concerns; SOX 1Y: still +~65% but paring gains",
+      "CTA global at 54th percentile (Oct 4, GS FICC — latest available; no newer specific percentile); ~$72B net long global equities; GS Prime: hedge funds net sold AI stocks 5 consecutive days Oct 8-14, reversing all net buying since early 2025; GS: L/S positioning at historically low levels; asymmetric SPX risk: ~$45B CTA selling on 2-sigma down vs ~$5.5B buying on 2-sigma up; CTA exposure likely dropped sharply on Oct 16 given VIX +21% — may be below 50th percentile now",
+      "GEX IMPROVED from -$47.6B (Oct 14) to -$7.41B (Oct 16, SquawkFlow); POST-OPTIONS-EXPIRATION reset (Oct 16 was monthly OpEx — third Friday); massive options open interest rolled off; SPX at 7,660 (Oct 16, -1.09%); SPX below zero-gamma flip at 7,729 (negative gamma persists but less pressure); call wall $7,900, put wall $7,650 (raised from $7,500); swing line 7,761; net GEX is 16th most negative of 59 sessions since Jul 28; InsiderFinance shows Net GEX near zero (-$104.81M, different methodology); tail risk reduced but not eliminated",
+      "Russell 2000 YTD at ~10.6% (Oct 16 computed from 12.44% on Oct 15 × -1.66% one-day); IWM NAV $270.43 (-$4.56/-1.66%); RUT ~11.3% below ATH ($304.98, worsened from 9.8%); small caps fell less than mega-cap tech on Oct 16 (RUT -1.66% vs NDX -2.50% vs SOX -3.83%); rotation toward small caps continues; rising yields remain headwind; 1Y: ~+13.5%",
+      "AAII spread at -2.9% (Oct 16 survey release, covering Oct 9-15; Rallies/SquawkNews/StockMarketData); UNCHANGED from previous; down from +1.3% on Oct 9 survey; bulls 38.7% (down from 40.3%), bears 41.6% (up from 39.0%); bearish sentiment above historical avg 31.5% for 37th consecutive week; spread below historical avg 6.5% for 14th consecutive week; next survey (Oct 23) will capture Oct 16 crash sentiment — likely to show even more pessimism",
+      "NDX at 29,187.55 (Oct 16, Nasdaq OMX); -2.50% on Oct 16; now ~5.12% below 52wk high (30,762.20) — worsened from 2.7%; intraday high 29,822.91, low 29,073.29; Nasdaq Composite -2.15% to 26,140; tech under pressure from rising yields and chip selloff; AI software valuations reversed; XNDX (total return) -2.50%; biggest weekly tech drop in over a year (Xinhua); NDX 1Y: still +~18% but paring gains rapidly",
+      "Market context: SPX at 7,660 (Oct 16, -1.09%/-84.62pts); Dow at ~52,002 (-0.34%/-175.28pts); Nasdaq Composite at 26,140 (-2.15%/-572.99pts); SOX in deeper bear market (11,137.29, -3.83%, 7-day losing streak); VIX SURGED 21.45% to 19.99 (intraday high 22.31); F&G in EXTREME FEAR at 18; BofA sell signal ENDED (7.4); GEX improved post-OpEx to -$7.41B; override OFF (BofA<8); structural risk ELEVATED but improving — override off, F&G extreme fear, GEX reset, but SOX deeper bear market, VIX surge, low cash persist"
     ]
   }
 }

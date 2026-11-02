@@ -1,6 +1,6 @@
 {
-  "lastRun": "2026-10-30T03:01:00.097Z",
-  "durationMs": 54400,
+  "lastRun": "2026-11-02T03:01:02.864Z",
+  "durationMs": 58062,
   "sources": {
     "cboe": {
       "success": false,

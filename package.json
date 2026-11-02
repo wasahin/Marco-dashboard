@@ -4,17 +4,17 @@
   "description": "Global Macro Research Dashboard - Real-time market sentiment and positioning analysis",
   "main": "index.html",
   "scripts": {
+    "postinstall": "node scripts/install-overview.cjs",
+    "prestart": "node scripts/install-overview.cjs",
     "start": "node scripts/server.js",
     "update-data": "node scripts/update-data.js",
-    "dev": "npx serve -l 8084"
+    "update-overview": "node scripts/update-overview.cjs",
+    "build": "node scripts/install-overview.cjs",
+    "dev": "node scripts/install-overview.cjs && npx serve -l 8084"
   },
   "keywords": ["macro", "dashboard", "sentiment", "trading", "vix", "fear-greed"],
   "author": "",
   "license": "MIT",
-  "devDependencies": {
-    "serve": "^14.2.1"
-  },
-  "dependencies": {
-    "node-fetch": "^3.3.2"
-  }
+  "devDependencies": {"serve": "^14.2.1"},
+  "dependencies": {"node-fetch": "^3.3.2"}
 }

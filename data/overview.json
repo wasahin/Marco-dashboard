@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-02",
+  "priceAsOf": "2026-10-30",
+  "period": {"weekStart": "2026-10-23", "monthStart": "2026-09-30", "end": "2026-10-30"},
+  "priceBasis": "Provider close; not verified total return. pp = arithmetic return difference. SPY is an SPX proxy, not SPX itself.",
+  "sources": {
+    "screenshot": {"name": "User-supplied weekly ETF table", "observedAt": "2026-10-30", "url": null, "quality": "user-provided, not independently verified", "aumObservedAt": null},
+    "finance": {"name": "Finance connector daily close history retrieved in prior analysis", "observedAt": "2026-10-30", "url": null, "quality": "provider close; adjustment basis unverified"},
+    "rates": {"name": "Stocktwits weekly recap via Yahoo Finance", "observedAt": "2026-10-30", "url": "https://finance.yahoo.com/markets/currencies/articles/stocktwits-weekly-spread-shaped-treasury-005438925.html", "quality": "secondary report; curve narrative inconsistent, spread not imported"}
+  },
+  "benchmarks": [
+    {"ticker":"VOO","name":"S&P 500 proxy","w":-0.54,"source":"screenshot"},
+    {"ticker":"QQQ","name":"Nasdaq 100 proxy","w":-1.97,"source":"screenshot"},
+    {"ticker":"IWM","name":"Small caps","w":1.30,"source":"screenshot"},
+    {"ticker":"DIA","name":"Dow proxy","w":-0.81,"source":"screenshot"}
+  ],
+  "sectors": [
+    {"ticker":"XLY","name":"非必需消費","w":2.02,"aum":22386,"source":"screenshot"},
+    {"ticker":"XLB","name":"原材料","w":2.79,"aum":8196,"source":"screenshot"},
+    {"ticker":"XLI","name":"工業","w":1.69,"aum":31099,"source":"screenshot"},
+    {"ticker":"XLE","name":"能源","w":1.00,"aum":45102,"source":"screenshot"},
+    {"ticker":"XLP","name":"必需消費","w":1.31,"aum":14617,"source":"screenshot"},
+    {"ticker":"XLF","name":"金融","w":1.09,"aum":51830,"source":"screenshot"},
+    {"ticker":"XLK","name":"科技","w":-2.03,"aum":126072,"source":"screenshot"},
+    {"ticker":"XLV","name":"醫療保健","w":3.12,"aum":47323,"source":"screenshot"},
+    {"ticker":"XLC","name":"通訊服務","w":-5.32,"aum":22222,"source":"screenshot"},
+    {"ticker":"XLRE","name":"房地產","w":1.41,"aum":7958,"source":"screenshot"},
+    {"ticker":"XLU","name":"公用事業","w":2.04,"aum":23805,"source":"screenshot"}
+  ],
+  "themeBaseline": {"ticker":"SPY","closes":[762.63,759.97,755.72],"source":"finance"},
+  "themes": [
+    {"ticker":"SMH","name":"半導體 / AI hardware proxy","closes":[609,527.20,522.49],"events":"業績、AI capex、出口政策","fit":"相對強弱修復及收緊後再評估；不是跌深買入","source":"finance"},
+    {"ticker":"XBI","name":"生物科技","closes":[157.68,149.54,155.98],"events":"臨床、監管、併購、融資","fit":"ETF 趨勢不抵銷個股事件風險","source":"finance"},
+    {"ticker":"GDX","name":"金礦","closes":[87.80,80.20,77.09],"events":"黃金、美元、利率、礦商業績","fit":"等整固，區分趨勢與急升伸延","source":"finance"},
+    {"ticker":"XLE","name":"能源","closes":[61.50,69.33,70.02],"events":"原油、供應政策、地緣事件","fit":"相對強亦須檢查伸延與 headline risk","source":"finance"},
+    {"ticker":"XLB","name":"原材料","closes":[48.70,51.31,52.74],"events":"需求、商品、貿易政策、業績","fit":"優先觀察基底；子行業不一定同步","source":"finance"},
+    {"ticker":"CIBR","name":"網絡安全","closes":[103.09,106.12,101.03],"events":"企業 IT 開支、業績、安全事件","fit":"需價格確認，不以故事代替 setup","source":"finance"}
+  ],
+  "marketHealth": {"equalWeight":{"ticker":"RSP","closes":[208.02,216.54,218.31],"source":"finance"},"above50DMA":null,"above200DMA":null,"momentumFactor":null,"note":"Sector breadth and ETF relative returns are proxies, not breakout success rates or long-short momentum factor returns. No private watchlist used."},
+  "crossAssets": [
+    {"name":"US 2Y yield","value":4.59,"unit":"%","weekChange":-10,"changeUnit":"bp","observedAt":"2026-10-30","source":"rates"},
+    {"name":"US 10Y yield","value":4.93,"unit":"%","weekChange":-7,"changeUnit":"bp","observedAt":"2026-10-30","source":"rates"},
+    {"name":"US Dollar Index","value":101.96,"unit":"","weekChange":0,"changeUnit":"% (reported flat, rounded)","observedAt":"2026-10-30","source":"rates"},
+    {"name":"Gold","value":null,"unit":"USD/oz","reason":"Await consistent timestamp and instrument"},
+    {"name":"Oil","value":null,"unit":"USD/bbl","reason":"Await identified contract and settlement"},
+    {"name":"Bitcoin","value":null,"unit":"USD","reason":"Await fixed UTC cutoff"},
+    {"name":"Credit spread","value":null,"unit":"bp","reason":"No verified spread series"}
+  ],
+  "events": [
+    {"title":"AI capex / financing concerns","eventDate":"2026-10-22","publishedAt":"2026-10-23 08:20 (publisher display)","source":"華爾街見聞","url":"https://wallstreetcn.com/articles/3784246","event":"報道指 Meta (META) 上調資本開支並披露龐大未來支出承諾；同日半導體廣泛受壓。屬歷史事件，非今日熱訊。","hypothesis":"若市場更重視現金回報及融資可持續性，AI 硬件可能持續落後；地緣與能源因素亦可能共同影響，不能證明單一因果。","initial":"來源報道 10/22 Nasdaq Composite -2.6%、SOX -6.7%、META 約 -7%；屬來源引述，未獨立重算。","follow1":null,"follow5":null,"followStatus":"unavailable: observation windows elapsed, event-aligned prices not verified","invalidation":"預先觀察主題收復事件前收市價，並連續 5 個交易日相對大市改善；尚未計算，不能宣稱已觸發。"}
+  ],
+  "refresh": {"mode":"manual snapshot; npm run update-overview refreshes price modules only", "lastAttempt":null,"errors":[]}
+}

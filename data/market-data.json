@@ -2,81 +2,81 @@
   "lastUpdated": "2026-11-10",
   "metrics": {
     "bofa": {
-      "value": 7.4,
+      "value": 7.2,
       "label": "BofA Bull & Bear",
       "unit": "/10",
-      "description": "BofA Bull & Bear at 7.4 (Oct 15 capital flow report, StockStar/Morningstar/GuruFocus/SoSoValue); UNCHANGED from Oct 16 update; sell signal ENDED after ~5 months (since May 26); back in neutral zone (2-8); Hartnett notes 'too early to buy' despite sell signal ending; 54 central bank rate hikes in 2026; FMS positioning defensive ahead of Nov US midterms; hedge funds de-grossing continues (GS Prime: 5 consecutive days of net selling Oct 8-14); global equity breadth deterioration drove indicator lower; no newer BofA report found as of Oct 20",
+      "description": "BofA Bull & Bear 7.2 (Flow Show ~2026-10-29/30 per Investing.com 2026-11-09 & Finvaulta; down from 7.4). Quality: secondary reports, original note not accessed. CONFLICT: SentimentInsideOut lists 7.1 (2026-10-30) — not averaged. STALE: no newer weekly (Nov 5/6) reading verified as of 2026-11-10. Hartnett tactically risk-off to mid-Nov; sell signal ended (not a buy signal).",
       "status": "neutral"
     },
     "fearGreed": {
-      "value": 25,
+      "value": 32,
       "label": "CNN Fear & Greed",
       "unit": "/100",
-      "description": "Fear & Greed at 25 (Oct 19 close, MacroMicro); IMPROVED from 18 (extreme fear) on Oct 16 close; market rallied Oct 19 (SPX +0.40%, SOX +1.59%, NDX +1.18%, VIX -9.15%) — relief rally after Oct 16 crash pulled F&G out of extreme fear zone (<=20) into fear zone (21-40); CNN API intraday on Oct 16 was 28.06; previous_close on Oct 15 was 31.54; 1-week ago 46.49; F&G still in fear zone but no longer extreme — contrarian bullish cushion has partially deflated; fear zone = mildly contrarian bullish but less powerful than extreme fear; sentiment deterioration during Oct 16 tech selloff partially reversed on Oct 19 but not fully recovered",
+      "description": "CNN Fear & Greed 31.7 (CNN dataviz API timestamp 2026-11-09 23:10 UTC, after Nov 9 close). Previous close 22.1 (Nov 6), 1W ago 19.4, 1M ago 43.5. Fear band; out of extreme fear after Nov 9 rebound. Quality: primary API via fetch.",
       "status": "neutral"
     },
     "vix": {
-      "value": 18.16,
+      "value": 19.92,
       "label": "VIX Index",
       "unit": "",
-      "description": "VIX at 18.16 (Oct 19 close, CBOE); DROPPED -1.83 (-9.15%) from 19.99 on Oct 16; relief rally de-compressed volatility after Oct 16 surge; VIX futures at 17.60 (Oct 21 settlement, CBOE); term structure in contango; spot VIX now below front-month futures — normal regime restored after Oct 16 backwardation scare; CBOE weekly recap: VIX rose 5 pts w/w to 20 for week ending Oct 16 (driven by demand for downside convexity ahead of MegaCap earnings); VIX now back in neutral zone (15-30) and declining; SPX at 7,690.73 (Oct 19 close, FRED) — still below zero-gamma flip at 7,729 (negative gamma persists); volatility compressing after Oct 16 spike; weekend risk reduced given VIX drop",
+      "description": "VIX 19.92 (2026-11-09 close; Perplexity Finance OHLCV). Prior close 25.64 (Nov 6), -5.72 pts. Quality: provider close.",
       "status": "neutral"
     },
     "aaii": {
-      "value": -2.9,
+      "value": -14.3,
       "label": "AAII Bull-Bear Spread",
       "unit": "%",
-      "description": "AAII spread at -2.9% (Oct 16 survey release, covering Oct 9-15 survey period; Rallies/SquawkNews/StockMarketData/CanSeeMarket); UNCHANGED from previous; down from +1.3% on Oct 9 survey; bulls 38.7% (down from 40.3%), bears 41.6% (up from 39.0%); bearish sentiment above historical avg 31.5% for 37th consecutive week; spread below historical avg 6.5% for 14th consecutive week; retail sentiment deteriorated during Oct selloff; next survey release Oct 23 (covering Oct 16-22 — will capture Oct 16 crash sentiment and Oct 19 relief rally)",
+      "description": "AAII bull-bear spread -14.3 (survey week ending 2026-11-04, released Nov 5): bulls 34.1%, neutral 17.5%, bears 48.4% (AAII on X / AskTraders). Prior -3.6 (Oct 28 week). CONFLICT: YCharts -14.29 (rounding); eOption -14.7 — not averaged. Survey closed before Nov 5 selloff.",
       "status": "neutral"
     },
     "cta": {
-      "value": 54,
+      "value": 47,
       "label": "CTA Exposure Percentile",
       "unit": "th",
-      "description": "CTA global equity net exposure at 54th percentile (Oct 4, GS FICC — latest available; no newer specific percentile data found as of Oct 20); ~$72B net long global equities; GS models asymmetric SPX risk: 2-sigma down triggers ~$45B CTA selling vs only ~$5.5B buying on 2-sigma up; GS Prime: hedge funds net sold global AI stocks for 5 consecutive days Oct 8-14, reversing all net buying since early 2025; GS notes hedge fund L/S positioning at historically low levels amid rates and energy volatility; Deutsche Bank vol-control strategies previously at 100th percentile — likely normalized further after Oct 16 selloff and Oct 19 relief rally; CTA exposure likely DROPPED sharply on Oct 16 (VIX +21%) then partially recovered on Oct 19 (VIX -9%) — estimated now in 40th-50th percentile range but no confirmed data",
+      "description": "CTA global equity positioning 47th percentile (Deutsche Bank, week ending ~2026-11-06, via TheStreet Pro 2026-11-09; from 58th). DB: SPX 53rd (from 82nd), NDX 24th, RUT 22nd. PROVIDER CHANGE: prior value 54 was GS FICC (Oct 4) — not directly comparable. Other views: Citadel US CTA z-score -3.3 SD (Nov 3); GS global CTA length ~$49B, below 2017 avg. Quality: secondary report.",
       "status": "neutral"
     },
     "cash": {
       "value": 3.9,
       "label": "Fund Manager Cash",
       "unit": "%",
-      "description": "BofA Oct FMS: cash at 3.9% (released Oct 13, 10jqka/MaceNews/Docin/SummaMoney/GmtEight/AInvest); UNCHANGED from Sep FMS; below 4% sell threshold (bearish); 185 institutional managers, $512B AUM (per MaceNews — larger panel than previously reported); surveyed Oct 2-8; net equity longs slipped to 44% from 49%; tech overweight at highest since Aug 2020 (net 37% per Summa Money); biggest cut to bank longs since Mar 2023; inflation expectations lowest in ~2 years; belief Fed will stand pat this month; Hartnett says sustained Fed cuts needed to deploy cash; November midterms add uncertainty; next FMS release mid-November",
+      "description": "BofA Global FMS cash 3.9% (October survey, fieldwork Oct 2-8, released Oct 13); unchanged from Sep; <=4.0% keeps Cash Rule sell signal. CONFLICT on panel: 185 mgrs/$512B (MaceNews/Finvaulta) vs 161/$453B (Investing.com). STALE-by-design: November FMS not yet released as of 2026-11-10.",
       "status": "bearish"
     },
     "levEtfAum": {
       "value": 110,
       "label": "Leveraged ETF AUM",
       "unit": "$B",
-      "description": "Leveraged ETF AUM remains elevated at ~$110B; no significant change; positioning risk persists amid hedge fund de-grossing and Oct 16 selloff followed by Oct 19 relief rally",
+      "description": "STALE: ~$110B value retained from prior update; observation date & basis unknown. No verified current figure on same basis. CONFLICT: reported US leveraged ETF AUM ~$198B record (CryptoBriefing, Jun 23 2026) / ~$200B (S&P Global); global ~$230-250B (LSEG Lipper/Bloomberg, Jul-Aug). Not overwritten pending a consistent series. TQQQ net assets $29.08B (ProShares, 2026-11-08).",
       "status": "neutral"
     },
     "streetGamma": {
-      "value": -7.41,
+      "value": -101.38,
       "label": "Street Gamma Position",
       "unit": "$B/1%",
-      "description": "SPX dealer GEX at -$7.41B (Oct 16, SquawkFlow — last known post-OpEx value; no newer specific GEX data found for Oct 19 as of Oct 20); MAJOR IMPROVEMENT from -$47.6B on Oct 14; post-options-expiration reset (Oct 16 was monthly OpEx — third Friday); massive options open interest rolled off, resetting GEX calculation; SPX at 7,690.73 (Oct 19 close, FRED) — still below zero-gamma flip at 7,729 (negative gamma regime persists but spot approaching flip); call wall $7,900, put wall $7,650; swing line 7,761; InsiderFinance shows Net GEX near zero (-$104.81M, different methodology — nearby expiries only); negative gamma = volatility-expanding environment but significantly less pressure than pre-expiration; tail risk reduced; SPX needs to reclaim 7,729 to flip to positive gamma (stabilizing) regime",
+      "description": "SPX net dealer GEX -$101.38B per 1% (SquawkFlow, computed 2026-11-09 08:15 ET from Nov 6 settled OI; same provider as prior series). Zero-gamma flip 7,579, call wall 8,100, put wall 7,300. Model output, dealer side assumed. CONFLICT (different methodology/expiries): Bullflow -$31.75B (Nov 6 16:00 ET); ZeroGEX -$39.3B (Nov 9 11:11 ET, intraday); OptionCharts -$4.93B (Nov 9 expiry only). Not averaged. Nov 9 close-based value unavailable.",
       "status": "neutral"
     },
     "sox": {
-      "value": 22.52,
+      "value": 31.44,
       "label": "SOX Drawdown",
       "unit": "%",
-      "description": "SOX at 11,316.34 (Oct 19 close, Nasdaq OMX); UP +177.21 (+1.59%) from 11,139.13 on Oct 16; IMPROVED from 23.74% drawdown on Oct 16 to 22.52% on Oct 19; still DEEP BEAR MARKET — 22.52% below June ATH (~14,605); SOX 1Y: +64.36% (down from +70.87% on Oct 16 — paring gains rapidly); day's range 11,293.45-11,550.92; relief rally on Oct 19 after 8-day losing streak (Oct 8-16, longest since 2008 per Toutiao/BTIG); SOX fell 11.4% during week ending Oct 16 (largest weekly drop since Apr 2025); iShares SOXX ETF fell 9 consecutive days (BTIG); chip selloff spread from memory to design/equipment; Korean KOSPI crashed ~8% on AI concerns before rebounding; AI software valuations reversed; BTIG recommends selling rallies, SOXX $490 key support; sector-wide de-rating ongoing",
+      "description": "SOX 10,033.93 (2026-11-09 close, +6.85% d/d) vs closing high 14,634.72 (2026-06-22) → drawdown 31.44% (closing-high basis; Perplexity Finance OHLCV). Prior repo value 22.52 dated Oct 19. BofA (via Sina, Nov 9) cites ~38% from June high, consistent with Nov 5 low close 9,011. Deep bear market.",
       "status": "bearish"
     },
     "ndx": {
-      "value": -4.01,
+      "value": -10.62,
       "label": "NDX Performance",
       "unit": "%",
       "drawdownNote": "% below 52wk high",
-      "description": "NDX at 29,529.34 (Oct 19 close, Nasdaq OMX); UP +343.33 (+1.18%) from 29,186.01 on Oct 16; IMPROVED from 5.12% drawdown on Oct 16 to 4.01% on Oct 19; intraday high 29,788.76, low 29,461.32; now 4.01% below 52wk high of 30,762.20 (improved from 5.12%); NDX 1Y: +17.45% (down from +19.31% — paring gains); Nasdaq Composite rallied on Oct 19 after Oct 16 selloff; tech under pressure from rising yields and chip selloff; AI software valuations reversed (Nasdaq article); mega-cap holding better than semis; relief rally on Oct 19 partially reversed Oct 16 losses; biggest weekly tech drop in over a year (Xinhua) for week ending Oct 16; mega-cap earnings ahead (CBOE notes VIX surge driven by demand for downside convexity ahead of MegaCap earnings)",
+      "description": "NDX 27,907.63 (2026-11-09 close, +3.40% d/d) vs closing high 31,224.69 (2026-10-06) → -10.62% below 52wk closing high (Perplexity Finance OHLCV). Prior repo value -4.01 dated Oct 19.",
       "status": "neutral"
     },
     "russell2000": {
-      "value": 10.7,
+      "value": 14.46,
       "label": "Russell 2000 YTD",
       "unit": "%",
-      "description": "RUT YTD at ~10.7% (Oct 19 estimated from IWM NAV $270.43 on Oct 16 + ~1% relief rally on Oct 19); up slightly from 10.6% on Oct 16; IWM NAV ~$273 (Oct 19 estimated); 52wk range $229.10-$304.98; RUT ~10.5% below ATH ($304.98, improved from 11.3% on Oct 16); small caps rallied on Oct 19 relief rally; small caps fell less than mega-cap tech on Oct 16 (RUT -1.66% vs NDX -2.50% vs SOX -3.83%); rotation toward small caps away from mega-cap tech continues; rising treasury yields remain headwind; RUT 1Y: ~+13.5%; small caps relatively resilient during tech selloff; VTWO YTD 10.72% as of Oct 16 (Vanguard)",
+      "description": "RUT 2,840.81 (2026-11-09 close) vs 2,481.91 (2025-12-31 close) → YTD +14.46% price return (Perplexity Finance OHLCV). Closing high 3,068.42 (2026-08-14); -7.42% from high. Replaces prior ~10.7 estimate (Oct 19, estimated from IWM NAV).",
       "status": "neutral"
     }
   },
@@ -88,8 +88,9 @@
   "regime": {
     "level": "medium-risk",
     "title": "Yellow Zone",
-    "advice": "CAUTION — REDUCE POSITION SIZE: Override NOT triggered (BofA at 7.4, below 8.0 threshold — sell signal ENDED after ~5 months). F&G IMPROVED from 18 (extreme fear) to 25 (fear) on Oct 19 relief rally — no longer in extreme fear zone, so contrarian bullish cushion has partially deflated. VIX DROPPED 9.15% to 18.16 (back in neutral, de-compressed after Oct 16 surge). GEX at -$7.41B (Oct 16 post-OpEx, last known — significantly improved from -$47.6B on Oct 14). SPX at 7,690.73 (Oct 19, +0.40%) — still below zero-gamma flip at 7,729 (negative gamma persists). BUT: SOX still in DEEP BEAR MARKET (22.52% drawdown, improved from 23.74%); cash still at 3.9% (below 4% sell threshold); NDX drawdown 4.01% (improved from 5.12%). Mixed signals — Oct 19 relief rally improved sentiment and volatility, but structural risks persist (low cash, SOX bear market, negative gamma). F&G no longer in extreme fear = less contrarian cushion. MegaCap earnings ahead (CBOE notes VIX surge driven by demand for downside hedges ahead of earnings). Wait for SOX to stabilize and SPX to reclaim 7,729 (zero-gamma flip) before new VCP entries. Use minimum position size for any breakouts. November midterms add political uncertainty.",
+    "advice": "PROVISIONAL (not recalculated 2026-11-10: sub-score mapping for sentiment/flow/positioning/structure is not fully specified in AGENTS.md, so total score not recomputed). Override NOT triggered (BofA 7.2 < 8 though cash 3.9 < 4 and SOX drawdown 31.4% >= 10). Context as of Nov 9 close: VIX 19.92, F&G 32 (fear), AAII -14.3, SOX bear market, NDX -10.6% from high, dealer gamma negative (SPX below SquawkFlow flip 7,579). Nov 9 rebound is one session; wait for follow-through, breadth and SOX stabilisation before VCP entries; minimum size.",
     "details": [
+      "2026-11-10 refresh: metrics updated to Nov 9 US close where available; regime level/title retained as PROVISIONAL — prior score-based breakdown below (dated Oct 19) is no longer current and was not recomputed.",
       "OVERRIDE RULE NOT TRIGGERED: BofA=7.4 (< 8.0 threshold) — override requires BofA>=8 AND cash<4 AND SOX>=10. BofA below 8.0, so override OFF. Score-based: sentiment=1 [F&G moved to 25 (fear, no longer extreme fear — bullish offset reduced), AAII -2.9% neutral], flow=2 [cash 3.9% bearish], positioning=2 [SOX 22.52% bearish], structure=0 [VIX dropped to 18.16 neutral, GEX improved post-OpEx] → total=5, YELLOW",
       "BofA at 7.4 (Oct 15 capital flow report, StockStar/Morningstar/GuruFocus/SoSoValue); UNCHANGED from Oct 16 update; sell signal ENDED after ~5 months (since May 26); back in neutral zone (2-8); Hartnett: 'too early to buy' despite sell signal ending; global equity breadth deterioration drove indicator lower; hedge funds de-grossing continues (GS Prime: 5 consecutive days net selling Oct 8-14); no newer BofA report found as of Oct 20",
       "Fear & Greed at 25 (Oct 19 close, MacroMicro); IMPROVED from 18 (extreme fear) on Oct 16; market rallied Oct 19 (SPX +0.40%, SOX +1.59%, NDX +1.18%, VIX -9.15%); F&G pulled out of extreme fear zone (<=20) into fear zone (21-40); CNN API intraday on Oct 16 was 28.06; previous_close on Oct 15 was 31.54; 1-week ago 46.49; fear zone = mildly contrarian bullish but less powerful than extreme fear; sentiment deterioration during Oct 16 tech selloff partially reversed on Oct 19 but not fully recovered",

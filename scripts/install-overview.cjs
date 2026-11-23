@@ -5,7 +5,8 @@ let html = fs.readFileSync(file, 'utf8');
 const loaders = [
   ['market-overview-loader', 'src/market-overview.js'],
   ['hedge-fund-loader', 'src/hedge-fund-exposure.js'],
-  ['positioning-percentiles-loader', 'src/positioning-percentiles.js']
+  ['positioning-percentiles-loader', 'src/positioning-percentiles.js'],
+  ['section-readability-loader', 'src/section-readability.js']
 ];
 let changed = false;
 for (const [id, src] of loaders) {

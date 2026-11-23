@@ -6,7 +6,8 @@ const loaders = [
   ['market-overview-loader', 'src/market-overview.js'],
   ['hedge-fund-loader', 'src/hedge-fund-exposure.js'],
   ['positioning-percentiles-loader', 'src/positioning-percentiles.js'],
-  ['section-readability-loader', 'src/section-readability.js']
+  ['section-readability-loader', 'src/section-readability.js'],
+  ['positioning-context-loader', 'src/positioning-context.js']
 ];
 let changed = false;
 for (const [id, src] of loaders) {

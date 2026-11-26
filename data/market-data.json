@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-26",
+  "lastUpdated": "2026-11-27",
   "metrics": {
     "bofa": {
       "value": 7.1,
@@ -9,10 +9,10 @@
       "status": "neutral"
     },
     "fearGreed": {
-      "value": 15.23,
+      "value": 15.0,
       "label": "CNN Fear & Greed",
       "unit": "/100",
-      "description": "CNN API score 15.2253, timestamp 2026-11-25T23:19:47Z (after Nov 25 close); extreme fear. API previous_close 17.42 (Nov 24), previous_1_week 29.89. Primary API via fetch. https://production.dataviz.cnn.io/index/fearandgreed/graphdata",
+      "description": "CNN API score 14.9967, timestamp 2026-11-26T01:59:59Z (last update; Nov 26 US holiday, no new session); extreme fear; previous_close 15.23. https://production.dataviz.cnn.io/index/fearandgreed/graphdata",
       "status": "bullish"
     },
     "vix": {
@@ -23,10 +23,10 @@
       "status": "neutral"
     },
     "aaii": {
-      "value": -8.9,
+      "value": -8.3,
       "label": "AAII Bull-Bear Spread",
       "unit": "%",
-      "description": "STALE-CHECK: latest verified AAII release Nov 19 (survey week ending Nov 18): bulls 33.3%, neutral 24.4%, bears 42.2%, spread -8.9 pp. Holiday-week release (expected Nov 25) not verified as of 2026-11-26 07:30 HKT. https://www.aaii.com/latest/article/571354-aaii-sentiment-survey-pessimism-backtracks",
+      "description": "Week ending Nov 25 (released Nov 25/26): bulls 37.1%, neutral 17.5%, bears 45.4%, spread -8.3 pp (prior -8.9). Secondary reports of AAII release (Seeking Alpha via TradingView); AAII page not yet showing. https://www.tradingview.com/news/seekingalpha:661af410d094b:0-bullish-and-bearish-views-rise-and-the-aaii-survey-shows/",
       "status": "neutral"
     },
     "cta": {

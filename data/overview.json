@@ -1,1 +1,458 @@
-{"schemaVersion":1,"preparedAt":"2026-11-22","priceAsOf":"2026-11-20","period":{"weekStart":"2026-11-13","monthStart":"2026-10-20","end":"2026-11-20"},"priceBasis":"Provider daily close, not verified total return. 1W Nov13-Nov20; 1M Oct20-Nov20. pp=arithmetic return difference. Sector weekly benchmark VOO; theme/monthly benchmark SPY (SPX proxy). SPY/VOO weekly returns differ by 0.22pp; adjustment/distribution cause unverified, no silent correction.","sources":{"finance":{"name":"Finance connector daily histories retrieved Nov 22","observedAt":"2026-11-20","url":"https://finance.yahoo.com/","quality":"Provider closes; adjustments not independently verified"},"barrons":{"name":"Barrons market table, 16:39 ET quote snapshot","observedAt":"2026-11-20","url":"https://www.barrons.com/livecoverage/stock-market-news-today-112026/card/the-selloff-is-gaining-speed-K5Yx2hhLqXCrX301TKPc?siteid=yhoof2&eafs_enabled=false","quality":"Timestamped quote, not Treasury official par yield or contract settlement"},"gold":{"name":"FinanceFeeds citing Kitco 17:00 ET spot","observedAt":"2026-11-20","url":"https://financefeeds.com/gold-price-today-3538-saturday-week-ahead-after-9-percent-weekly-drop-bull-3700-bear-3420/","quality":"Secondary spot quote; differs from futures and other timestamps"},"wallstreetcn":{"name":"WallStreetCN Nov21 retrospective","observedAt":"2026-11-20","url":"https://wallstreetcn.com/articles/3786423","quality":"Narrative source; its >9% SPX weekly claim conflicts with close-derived -8.6%, so use price history rather than headline for returns"},"bofa":{"name":"Investing.com via Yahoo, BofA Nov20 report","observedAt":"2026-11-18","url":"https://finance.yahoo.com/markets/stocks/articles/2-questions-decide-risk-assets-135611700.html","quality":"Weekly flows end Nov18; FMS survey Nov6-12; not synchronous price observations"}},"benchmarks":[{"ticker":"VOO","name":"S&P 500 proxy","w":-8.34,"m":-10.08,"source":"finance"},{"ticker":"QQQ","name":"Nasdaq 100 proxy","w":-10.51,"m":-15.21,"source":"finance"},{"ticker":"IWM","name":"Small caps","w":-7.54,"m":-6.95,"source":"finance"},{"ticker":"DIA","name":"Dow proxy","w":-8.04,"m":-8.25,"source":"finance"}],"sectors":[{"ticker":"XLY","name":"非必需消費","w":-6.27,"m":-2.63,"rm":7.67,"source":"finance"},{"ticker":"XLB","name":"原材料","w":-7.45,"m":-5.64,"rm":4.66,"source":"finance"},{"ticker":"XLI","name":"工業","w":-7.35,"m":-6.25,"rm":4.05,"source":"finance"},{"ticker":"XLE","name":"能源","w":-6.85,"m":-10.98,"rm":-0.67,"source":"finance"},{"ticker":"XLP","name":"必需消費","w":-2.05,"m":3.09,"rm":13.39,"source":"finance"},{"ticker":"XLF","name":"金融","w":-7.00,"m":-2.06,"rm":8.24,"source":"finance"},{"ticker":"XLK","name":"科技","w":-12.49,"m":-19.65,"rm":-9.34,"source":"finance"},{"ticker":"XLV","name":"醫療保健","w":-6.15,"m":-1.43,"rm":8.87,"source":"finance"},{"ticker":"XLC","name":"通訊服務","w":-7.97,"m":-9.22,"rm":1.08,"source":"finance"},{"ticker":"XLRE","name":"房地產","w":-4.30,"m":0.19,"rm":10.49,"source":"finance"},{"ticker":"XLU","name":"公用事業","w":-3.07,"m":1.93,"rm":12.24,"source":"finance"}],"themeBaseline":{"ticker":"SPY","closes":[769.05,754.37,689.81],"source":"finance"},"themes":[{"ticker":"SMH","name":"半導體 / AI hardware proxy","closes":[546.36,486.75,400.06],"events":"業績反應、AI融資、建設政策","fit":"週跌17.81%、月跌26.78%；週月相對落後，等止跌收緊，唔將超賣當入場。","source":"finance"},{"ticker":"XBI","name":"生物科技","closes":[153.24,150.55,140.18],"events":"臨床、監管、併購、融資","fit":"週跌6.89%，只係相對抗跌；未證明存在可買基底。","source":"finance"},{"ticker":"GDX","name":"金礦","closes":[86.10,81.64,68.40],"events":"金價、實質利率、美元、礦商業績","fit":"週跌16.22%、月跌20.56%；避險敘事失去價格確認，先等結構修復。","source":"finance"},{"ticker":"XLE","name":"能源","closes":[67.97,64.96,60.51],"events":"油價、供應及地緣消息","fit":"週跌6.85%，月度亦相對落後；唔因週跌少於SPY就視為新領導。","source":"finance"},{"ticker":"XLB","name":"原材料","closes":[51.23,52.23,48.34],"events":"需求、商品、政策、業績","fit":"週跌7.45%；相對領先只表示跌少，唔等於符合VCP。","source":"finance"},{"ticker":"CIBR","name":"網絡安全","closes":[100.40,95.04,91.43],"events":"IT開支、業績、重大安全事件","fit":"週跌3.80%，相對抗跌但月跌8.93%；未驗證均線及伸延，Entry保持未確認。","source":"finance"}],"marketHealth":{"equalWeight":{"ticker":"RSP","closes":[215.86,221.16,207.44],"source":"finance"},"above50DMA":null,"above200DMA":null,"momentumFactor":null,"note":"0/11 sectors positive; 10/11 beat VOO, illustrating relative resilience inside a broad decline. RSP week -6.20%, SPY -8.56%; RSP relative +2.35pp. Best means least negative: XLP/XLU/XLRE. Worst XLK/XLC/XLB. No private watchlist or invented VCP success rate."},"crossAssets":[{"name":"US 2Y yield","value":null,"unit":"%","weekChange":null,"reason":"No exact verified Friday-cutoff series; do not retain Oct30 as current"},{"name":"US 10Y yield (16:39 ET quote)","value":4.944,"unit":"%","weekChange":null,"observedAt":"2026-11-20 16:39 ET","source":"barrons"},{"name":"US Dollar Index (16:39 ET quote)","value":103.84,"unit":"","weekChange":null,"observedAt":"2026-11-20 16:39 ET","source":"barrons"},{"name":"Spot Gold (17:00 ET)","value":3537.9,"unit":"USD/oz","weekChange":null,"observedAt":"2026-11-20 17:00 ET","source":"gold"},{"name":"Oil","value":null,"unit":"USD/bbl","reason":"Quotes vary by timestamp/contract; no common settlement basis verified"},{"name":"Bitcoin","value":null,"unit":"USD","reason":"No verified fixed-UTC weekly cutoff; no spot morning quote substituted"},{"name":"Credit spread","value":null,"unit":"bp","reason":"No verified same-cutoff broad credit-spread observation"}],"events":[{"title":"AI業績利好未能止跌：事後回顧","eventDate":"2026-11-18","publishedAt":"2026-11-21 retrospective","source":"WallStreetCN / provider daily closes","url":"https://wallstreetcn.com/articles/3786423","event":"華爾街見聞回顧指NVIDIA (NVDA) 業績與指引超預期仍未扭轉AI賣壓，市場焦點轉向融資及資本回報。唔將來源敘事當已證實單一因果。","hypothesis":"若利好無法帶來相對強勢，AI硬件趨勢修復可能需更長時間。","initial":"Nov18 SPY -0.31%、SMH -0.12%（provider close-to-close）；選Nov18作業績後完整交易日，並非消息公布瞬間反應。","follow1":-1.96,"follow5":null,"followStatus":"SPY Nov18 730.20 to Nov19 715.87: -1.9625%; +5 sessions not complete as of Nov22. Event-day and follow-up measures explicitly distinct.","invalidation":"SMH重新收復業績後交易日高位並出現持續相對SPY改善；高位未核實，未宣稱觸發。"},{"title":"期權到期日：負gamma模型與急跌","eventDate":"2026-11-20","publishedAt":"2026-11-20 08:15 ET snapshot","source":"SquawkFlow / provider closes","url":"https://squawkflow.com/gex","event":"SquawkFlow盤前以Nov19已結算OI計算SPX GEX -$113.29B/1% move；唔係到期後收市倉位。","hypothesis":"在模型dealer-side假設成立時，負gamma可能放大波動；到期後須重新評估，不能直接沿用到下週。","initial":"Nov20 SPY -3.64%、VIX收35.89、SOX跌10.73%；同時出現不證明gamma單獨造成跌市。","follow1":null,"follow5":null,"followStatus":"Pending: next completed US trading session after Nov20 not yet available.","invalidation":"新一期同口徑OI模型轉正、波動回落且價格穩定會弱化放大假設；必須等到期後新快照。"},{"title":"調查低現金與價格恐慌並存","eventDate":"2026-11-20","publishedAt":"2026-11-20 report","source":"BofA via Investing.com / Yahoo","url":"https://finance.yahoo.com/markets/stocks/articles/2-questions-decide-risk-assets-135611700.html","event":"BofA週報Bull & Bear 7.1；11月FMS現金3.6%。截至Nov18股票基金流入$66.6B，唔等於所有投資者都已去槓桿。","hypothesis":"情緒恐慌與機構低現金可以並存；單靠恐慌指標未足確認持倉已完全出清。","initial":"Nov20 SPY -3.64%；FMS觀察期Nov6-12與基金流量截至Nov18，不能歸因為當日交易。","follow1":null,"follow5":null,"followStatus":"Pending after Nov20; survey/flow observation windows differ from price baseline.","invalidation":"更新FMS現金回升、相同樣本槓桿下降兼市場廣度穩定，會削弱低現金脆弱性假設；唔用貨幣基金流入替代FMS。"}],"refresh":{"mode":"manual evidence-based data refresh only; no code, schedule or scoring policy change","lastAttempt":"2026-11-22","errors":["CTA percentile/AUM/vol-target and constituent breadth remain unverified.","Hedge fund latest leverage is a November MTD report, not a verified Nov20-versus-Nov13 weekly pair.","Legacy regime score formulas not fully verified; colour is provisional.","Price-return basis unverified; SPY/VOO weekly difference 0.22pp retained and disclosed."]}}
+{
+  "schemaVersion": 1,
+  "preparedAt": "2026-11-28",
+  "priceAsOf": "2026-11-27",
+  "period": {
+    "weekStart": "2026-11-20",
+    "monthStart": "2026-10-27",
+    "end": "2026-11-27"
+  },
+  "priceBasis": "Provider daily close, not verified total return. 1W Nov20-Nov27 (holiday week: 4 sessions, Nov 27 half day); 1M base 2026-10-27 close to Nov27. pp=arithmetic difference. Sector weekly benchmark VOO; theme/monthly benchmark SPY. SPY/VOO weekly returns differ by 0.29pp (5.68 vs 5.39); cause unverified, not corrected.",
+  "sources": {
+    "finance": {
+      "name": "Finance connector daily histories retrieved Nov 28",
+      "observedAt": "2026-11-27",
+      "url": "https://finance.yahoo.com/",
+      "quality": "Provider closes; adjustments not independently verified"
+    },
+    "barrons": {
+      "name": "Barrons market table, 16:39 ET quote snapshot",
+      "observedAt": "2026-11-20",
+      "url": "https://www.barrons.com/livecoverage/stock-market-news-today-112026/card/the-selloff-is-gaining-speed-K5Yx2hhLqXCrX301TKPc?siteid=yhoof2&eafs_enabled=false",
+      "quality": "Timestamped quote, not Treasury official par yield or contract settlement"
+    },
+    "gold": {
+      "name": "FinanceFeeds citing Kitco 17:00 ET spot",
+      "observedAt": "2026-11-20",
+      "url": "https://financefeeds.com/gold-price-today-3538-saturday-week-ahead-after-9-percent-weekly-drop-bull-3700-bear-3420/",
+      "quality": "Secondary spot quote; differs from futures and other timestamps"
+    },
+    "wallstreetcn": {
+      "name": "WallStreetCN Nov21 retrospective",
+      "observedAt": "2026-11-20",
+      "url": "https://wallstreetcn.com/articles/3786423",
+      "quality": "Narrative source; its >9% SPX weekly claim conflicts with close-derived -8.6%, so use price history rather than headline for returns"
+    },
+    "bofa": {
+      "name": "Investing.com via Yahoo, BofA Nov20 report",
+      "observedAt": "2026-11-18",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/2-questions-decide-risk-assets-135611700.html",
+      "quality": "Weekly flows end Nov18; FMS survey Nov6-12; not synchronous price observations"
+    },
+    "treasury": {
+      "name": "US Treasury Daily Par Yield Curve (CMT)",
+      "observedAt": "2026-11-25",
+      "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+      "quality": "official close"
+    },
+    "finance_daily": {
+      "name": "Finance connector daily closes (DX-Y.NYB; GCUSD continuous gold futures; CLUSD continuous WTI futures; BTCUSD UTC daily)",
+      "observedAt": "2026-11-27",
+      "url": null,
+      "quality": "provider close; continuous-contract roll basis unverified; differs from spot quotes"
+    },
+    "fred_hy": {
+      "name": "FRED ICE BofA US High Yield OAS (BAMLH0A0HYM2)",
+      "observedAt": "2026-11-26",
+      "url": "https://fred.stlouisfed.org/series/BAMLH0A0HYM2",
+      "quality": "official series; 1-session lag"
+    }
+  },
+  "benchmarks": [
+    {
+      "ticker": "VOO",
+      "name": "S&P 500 proxy",
+      "w": 5.39,
+      "m": -5.33,
+      "source": "finance"
+    },
+    {
+      "ticker": "QQQ",
+      "name": "Nasdaq 100 proxy",
+      "w": 6.99,
+      "m": -9.74,
+      "source": "finance"
+    },
+    {
+      "ticker": "IWM",
+      "name": "Small caps",
+      "w": 6.69,
+      "m": -2.28,
+      "source": "finance"
+    },
+    {
+      "ticker": "DIA",
+      "name": "Dow proxy",
+      "w": 5.51,
+      "m": -3.0,
+      "source": "finance"
+    }
+  ],
+  "sectors": [
+    {
+      "ticker": "XLY",
+      "name": "非必需消費",
+      "w": 6.68,
+      "m": 3.92,
+      "rm": 9.21,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLB",
+      "name": "原材料",
+      "w": 7.88,
+      "m": 0.71,
+      "rm": 6.0,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLI",
+      "name": "工業",
+      "w": 5.88,
+      "m": -1.41,
+      "rm": 3.88,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLE",
+      "name": "能源",
+      "w": 1.92,
+      "m": -9.59,
+      "rm": -4.3,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLP",
+      "name": "必需消費",
+      "w": 2.45,
+      "m": 6.35,
+      "rm": 11.64,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLF",
+      "name": "金融",
+      "w": 4.75,
+      "m": 2.29,
+      "rm": 7.58,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLK",
+      "name": "科技",
+      "w": 7.48,
+      "m": -15.48,
+      "rm": -10.19,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLV",
+      "name": "醫療保健",
+      "w": 3.93,
+      "m": 2.8,
+      "rm": 8.09,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLC",
+      "name": "通訊服務",
+      "w": 7.45,
+      "m": 3.77,
+      "rm": 9.06,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLRE",
+      "name": "房地產",
+      "w": 3.96,
+      "m": 4.01,
+      "rm": 9.3,
+      "source": "finance"
+    },
+    {
+      "ticker": "XLU",
+      "name": "公用事業",
+      "w": 2.44,
+      "m": 2.05,
+      "rm": 7.34,
+      "source": "finance"
+    }
+  ],
+  "themeBaseline": {
+    "ticker": "SPY",
+    "closes": [
+      769.66,
+      689.81,
+      728.97
+    ],
+    "source": "finance"
+  },
+  "themes": [
+    {
+      "ticker": "SMH",
+      "name": "半導體 / AI hardware proxy",
+      "closes": [
+        557.98,
+        400.06,
+        440.06
+      ],
+      "events": "業績反應、AI融資、建設政策",
+      "fit": "週升10.00%跑贏SPY 4.32pp，但月跌21.13%仍落後15.84pp；屬超賣反彈，未見基底，唔當入場訊號。",
+      "source": "finance"
+    },
+    {
+      "ticker": "XBI",
+      "name": "生物科技",
+      "closes": [
+        154.84,
+        140.18,
+        158.5
+      ],
+      "events": "臨床、監管、併購、融資",
+      "fit": "週升13.07%、月升2.36%，週月都跑贏SPY；相對強勢，但未核實均線結構及伸延。",
+      "source": "finance"
+    },
+    {
+      "ticker": "GDX",
+      "name": "金礦",
+      "closes": [
+        83.19,
+        68.4,
+        79.18
+      ],
+      "events": "金價、實質利率、美元、礦商業績",
+      "fit": "週升15.76%，跟金價反彈；月仍跌4.82%，避險敘事要等金價企穩先確認。",
+      "source": "finance"
+    },
+    {
+      "ticker": "XLE",
+      "name": "能源",
+      "closes": [
+        68.21,
+        60.51,
+        61.67
+      ],
+      "events": "油價、供應及地緣消息",
+      "fit": "週升1.92%落後SPY 3.76pp；油價持平、資金冇追，相對弱。",
+      "source": "finance"
+    },
+    {
+      "ticker": "XLB",
+      "name": "原材料",
+      "closes": [
+        51.78,
+        48.34,
+        52.15
+      ],
+      "events": "需求、商品、政策、業績",
+      "fit": "週升7.88%為本週最強板塊；月升0.71%，相對強但唔等於符合VCP。",
+      "source": "finance"
+    },
+    {
+      "ticker": "CIBR",
+      "name": "網絡安全",
+      "closes": [
+        109.65,
+        91.43,
+        97.69
+      ],
+      "events": "IT開支、業績、重大安全事件",
+      "fit": "週升6.85%小幅跑贏；月跌10.91%仍落後，Entry未確認。",
+      "source": "finance"
+    }
+  ],
+  "marketHealth": {
+    "equalWeight": {
+      "ticker": "RSP",
+      "closes": [
+        217.52,
+        207.44,
+        218.38
+      ],
+      "source": "finance"
+    },
+    "above50DMA": null,
+    "above200DMA": null,
+    "momentumFactor": null,
+    "note": "Week Nov20-Nov27: 11/11 sectors positive; 5/11 beat VOO (XLB, XLK, XLC, XLY, XLI). RSP +5.27% vs SPY +5.68% (-0.41pp): cap-weighted/tech-led rebound, breadth participation broad but not leading. Best XLB/XLK/XLC; worst XLE/XLU/XLP (defensives lagged after prior week's resilience). Constituent %>50/200DMA not verified. No private watchlist or VCP success rate."
+  },
+  "crossAssets": [
+    {
+      "name": "US 2Y yield",
+      "value": 4.61,
+      "unit": "%",
+      "weekChange": -2,
+      "changeUnit": "bp vs 2026-11-20",
+      "observedAt": "2026-11-25",
+      "source": "treasury",
+      "quality": "Nov 27 CMT not yet published at refresh; last official value"
+    },
+    {
+      "name": "US 10Y yield",
+      "value": 4.85,
+      "unit": "%",
+      "weekChange": -7,
+      "changeUnit": "bp vs 2026-11-20",
+      "observedAt": "2026-11-25",
+      "source": "treasury",
+      "quality": "Nov 27 CMT not yet published at refresh; last official value"
+    },
+    {
+      "name": "US Dollar Index",
+      "value": 103.99,
+      "unit": "",
+      "weekChange": 0.17,
+      "changeUnit": "% vs 2026-11-20",
+      "observedAt": "2026-11-27",
+      "source": "finance_daily"
+    },
+    {
+      "name": "Gold (continuous futures)",
+      "value": 3668.5,
+      "unit": "USD/oz",
+      "weekChange": 4.36,
+      "changeUnit": "% vs 2026-11-20",
+      "observedAt": "2026-11-27",
+      "source": "finance_daily",
+      "quality": "Nov 26 and Nov 27 provider closes identical (3668.5); holiday settlement possible, not verified"
+    },
+    {
+      "name": "Oil (WTI continuous futures)",
+      "value": 83.33,
+      "unit": "USD/bbl",
+      "weekChange": -0.1,
+      "changeUnit": "% vs 2026-11-20",
+      "observedAt": "2026-11-27",
+      "source": "finance_daily"
+    },
+    {
+      "name": "Bitcoin",
+      "value": 59770,
+      "unit": "USD (UTC daily close)",
+      "weekChange": 1.51,
+      "changeUnit": "% vs 2026-11-20",
+      "observedAt": "2026-11-27",
+      "source": "finance_daily",
+      "quality": "Provider revised Nov 25 close to 60373.65 (was 60102.87 in prior pull)"
+    },
+    {
+      "name": "Credit spread (US HY OAS)",
+      "value": 377,
+      "unit": "bp",
+      "weekChange": 1,
+      "changeUnit": "bp vs 2026-11-20",
+      "observedAt": "2026-11-26",
+      "source": "fred_hy"
+    }
+  ],
+  "events": [
+    {
+      "title": "半日市延續反彈，NVDA出口管制陰影未散",
+      "eventDate": "2026-11-27",
+      "publishedAt": "2026-11-27 (publisher date)",
+      "source": "香港經濟日報（替代來源；華爾街見聞11/28早餐未取得）",
+      "url": "https://inews.hket.com/article/4229385/?mtc=20005",
+      "event": "感恩節後半日市：標普+1.60%報7,297.49、納指+2.31%、道指+1.18%，三大指數週升逾5%；彭博報道Blackwell芯片現身與黃樂相關嘅上海數據中心，NVDA早段跌2.5%後收升0.8%；FT報NVDA要求Dell/超微暫停向東南亞四國出貨。",
+      "hypothesis": "空倉回補及超賣反彈推動指數，但NVDA相對落後顯示出口管制/走私風險正在被定價。",
+      "initial": "Nov27 SPY +1.71%、SOX +4.69%、NVDA +0.80%、VIX 23.81。",
+      "follow1": null,
+      "follow5": null,
+      "followStatus": "pending (+1 = Nov 30, +5 = Dec 4)",
+      "invalidation": "SPX 跌返 7,182.78（11/25 收市）以下，或 12/1、12/3 國會聽證後 NVDA 跌穿 141.17 盤中低位。"
+    },
+    {
+      "title": "黃仁勳復職：NVDA單日+31%",
+      "eventDate": "2026-11-23",
+      "publishedAt": "2026-11-23 16:58 ET",
+      "source": "Investopedia（替代來源）",
+      "url": "https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-nasdaq-11232026-12274147",
+      "event": "NVIDIA 董事會復任黃仁勳為CEO；NVDA 收 165.05 (+31.48%)，帶動AI股大升。",
+      "hypothesis": "市場對AI板塊信心高度綁定個人領導；反彈可能屬空倉回補多於基本面重估。",
+      "initial": "Nov23 SPY +4.71%、SOX +14.03%、VIX 26.62。",
+      "follow1": -0.49,
+      "follow5": null,
+      "followStatus": "+1: SPY Nov23 722.29→Nov24 718.78 -0.49%（NVDA -5.86%）；+5 pending (Dec 1)。",
+      "invalidation": "NVDA 跌穿 11/20 收市 125.53 或 SOX 跌穿 8,408.59。"
+    },
+    {
+      "title": "晶片股重挫、資金轉防守",
+      "eventDate": "2026-11-24",
+      "publishedAt": "2026-11-25 (publisher date)",
+      "source": "華爾街見聞早餐FM（網易轉載）",
+      "url": "https://www.163.com/dy/article/LCIHFOH205198NMR.html",
+      "event": "復職反彈只維持一日；費半跌7.88%，NVDA跌5.86%，Anthropic跌破IPO價；醫療+2.88%、必需消費+1.73%領漲；關稅消息打壓情緒。",
+      "hypothesis": "資金由AI硬件輪動至防守板塊；屬假設，ETF回報不等於資金流。",
+      "initial": "Nov24 SOX 8,832.50 (-7.88%)、SPY -0.49%。",
+      "follow1": -0.29,
+      "follow5": null,
+      "followStatus": "+1: SPY Nov24→Nov25 716.70 -0.29%（SOX -0.65%）；+5 pending (Dec 2)。",
+      "invalidation": "SOX 收復 11/23 收市 9,588 並連續跑贏 SPY。"
+    },
+    {
+      "title": "S&P 將 NVIDIA 評級列入負面觀察",
+      "eventDate": "2026-11-25",
+      "publishedAt": "2026-11-26 (publisher date)",
+      "source": "中新經緯（東方財富轉載）",
+      "url": "https://finance.eastmoney.com/a/202611263939964673.html",
+      "event": "標普全球評級將NVIDIA 'AA' 評級列入信用觀察負面；NVDA 收跌3.91%；標普500 -0.25% 至 7,182.78。",
+      "hypothesis": "AI龍頭信用風險定價上升，可能拖累AI融資鏈。",
+      "initial": "Nov25 NVDA 149.30、SOX 8,774.86、HY OAS 372bp (Nov 24)。",
+      "follow1": 1.71,
+      "follow5": null,
+      "followStatus": "+1: SPY Nov25 716.70→Nov27 728.97 +1.71%（半日市；NVDA +0.80%）；+5 pending (Dec 3)。",
+      "invalidation": "NVDA 收復 155.38 且信用利差收窄。"
+    },
+    {
+      "title": "AI業績利好未能止跌：事後回顧",
+      "eventDate": "2026-11-18",
+      "publishedAt": "2026-11-21 retrospective",
+      "source": "WallStreetCN / provider daily closes",
+      "url": "https://wallstreetcn.com/articles/3786423",
+      "event": "華爾街見聞回顧指NVIDIA (NVDA) 業績與指引超預期仍未扭轉AI賣壓，市場焦點轉向融資及資本回報。唔將來源敘事當已證實單一因果。",
+      "hypothesis": "若利好無法帶來相對強勢，AI硬件趨勢修復可能需更長時間。",
+      "initial": "Nov18 SPY -0.31%、SMH -0.12%（provider close-to-close）；選Nov18作業績後完整交易日，並非消息公布瞬間反應。",
+      "follow1": -1.96,
+      "follow5": -1.85,
+      "followStatus": "+1: SPY Nov18 730.20→Nov19 715.87 -1.96%; +5: Nov18→Nov25 716.70 -1.85% (provider close).",
+      "invalidation": "SMH重新收復業績後交易日高位並出現持續相對SPY改善；高位未核實，未宣稱觸發。"
+    },
+    {
+      "title": "期權到期日：負gamma模型與急跌",
+      "eventDate": "2026-11-20",
+      "publishedAt": "2026-11-20 08:15 ET snapshot",
+      "source": "SquawkFlow / provider closes",
+      "url": "https://squawkflow.com/gex",
+      "event": "SquawkFlow盤前以Nov19已結算OI計算SPX GEX -$113.29B/1% move；唔係到期後收市倉位。",
+      "hypothesis": "在模型dealer-side假設成立時，負gamma可能放大波動；到期後須重新評估，不能直接沿用到下週。",
+      "initial": "Nov20 SPY -3.64%、VIX收35.89、SOX跌10.73%；同時出現不證明gamma單獨造成跌市。",
+      "follow1": 4.71,
+      "follow5": null,
+      "followStatus": "+1: SPY Nov20 689.81→Nov23 722.29 +4.71%；+5 pending (Nov 30 close)。",
+      "invalidation": "新一期同口徑OI模型轉正、波動回落且價格穩定會弱化放大假設；必須等到期後新快照。"
+    },
+    {
+      "title": "調查低現金與價格恐慌並存",
+      "eventDate": "2026-11-20",
+      "publishedAt": "2026-11-20 report",
+      "source": "BofA via Investing.com / Yahoo",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/2-questions-decide-risk-assets-135611700.html",
+      "event": "BofA週報Bull & Bear 7.1；11月FMS現金3.6%。截至Nov18股票基金流入$66.6B，唔等於所有投資者都已去槓桿。",
+      "hypothesis": "情緒恐慌與機構低現金可以並存；單靠恐慌指標未足確認持倉已完全出清。",
+      "initial": "Nov20 SPY -3.64%；FMS觀察期Nov6-12與基金流量截至Nov18，不能歸因為當日交易。",
+      "follow1": 4.71,
+      "follow5": null,
+      "followStatus": "+1: SPY Nov20 689.81→Nov23 722.29 +4.71%；+5 pending (Nov 30 close)。",
+      "invalidation": "更新FMS現金回升、相同樣本槓桿下降兼市場廣度穩定，會削弱低現金脆弱性假設；唔用貨幣基金流入替代FMS。"
+    }
+  ],
+  "refresh": {
+    "mode": "manual evidence-based data refresh only; no code, schedule or scoring policy change",
+    "lastAttempt": "2026-11-28 Saturday: daily + full weekly (sectors/themes/breadth Nov20-Nov27, 1M base Oct27)",
+    "errors": [
+      "CTA percentile/AUM/vol-target and constituent breadth remain unverified.",
+      "Hedge fund latest leverage is a November MTD report, not a verified Nov20-versus-Nov13 weekly pair.",
+      "Legacy regime score formulas not fully verified; colour is provisional.",
+      "Price-return basis unverified; SPY/VOO weekly difference 0.22pp retained and disclosed."
+    ]
+  }
+}

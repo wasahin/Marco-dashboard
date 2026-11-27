@@ -7,7 +7,8 @@ const loaders = [
   ['hedge-fund-loader', 'src/hedge-fund-exposure.js'],
   ['positioning-percentiles-loader', 'src/positioning-percentiles.js'],
   ['section-readability-loader', 'src/section-readability.js'],
-  ['positioning-context-loader', 'src/positioning-context.js']
+  ['positioning-context-loader', 'src/positioning-context.js'],
+  ['options-context-loader', 'src/options-context.js']
 ];
 let changed = false;
 for (const [id, src] of loaders) {
